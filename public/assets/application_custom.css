@@ -1,0 +1,649 @@
+ /*
+ Athor: Mandeep Saini
+ Author email: mandeepsaini0211@gmail.com 
+ License: Released under the MIT license
+ */
+
+@font-face {
+    font-family: osen;
+    src: url(fonts/OpenSans-Regular.ttf);
+}
+
+
+@font-face {
+    font-family: bosen;
+    src: url(fonts/UbuntuMono-R.ttf);
+}
+body
+{
+    width:100% !important;
+}
+a#logoImg img {
+    width: 100%;
+     -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    transition: all 0.5s;
+}
+ul.menu_2
+{
+	background:green !important;
+}
+
+ul.menu_2 li a
+{
+	color: #db7004 !important;
+}
+.ttgh {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    background: black;
+}
+.ttgh span
+{
+	font-weight: 900;
+    color: white;
+}
+div#top_bar_header {
+    background: rgb(243, 122, 93) !important;
+    padding-top: 0.3%;
+    padding-bottom: 0.3%;
+}
+#top_bar_header #curTab span {
+    color: white;
+    font-size: 15px;
+}
+
+#sovial_ioco {
+    font-size: 12px;
+    TEXT-ALIGN: RIGHT;
+}
+
+#sovial_ioco a{
+    font-weight: 900;
+    color: white;
+}
+
+ul.menu_22 {
+    padding-left: 0px;
+    padding-top: 4%;
+    
+}
+ul.menu_22 li {
+    list-style: none;
+    display: inline-block;
+    font-size: 13px;
+}
+ul.menu_22 a {
+    color: red;
+    padding: 5px;
+    text-decoration: none;
+}
+div#main_menu_header {
+    padding-left: 0px;
+    text-align: right;l
+}
+a.current {
+    color: green !important;
+    border-bottom: 2px solid green;
+    font-weight: 900 !important;
+    text-decoration: none;
+}
+.banner_img img {
+    width: 100%;
+    margin-top: 0.3%;
+}
+.banner_img {
+    margin: 0 auto;
+    width: 100%;
+}
+div#graph_caht_section {
+    margin-top: 0.6%;
+}
+
+
+div#footerr a {
+    color: white;
+    text-decoration: none;
+}
+div#footerr a:hover
+{
+    color:#dc6f04;
+}
+.fixed 
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 11;
+    box-shadow: 0px 0px 8px 2px #000000;
+     -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    transition: all 0.5s;
+    
+}
+
+#top_bottom_header {
+    background: white;
+     -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    transition: all 0.5s;
+	box-shadow: 0px 0px 8px 2px #000000;
+     -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+}
+.fixed #logo_kk img {
+    width: 100%;
+     -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    transition: all 0.5s;
+}
+div#graph_caht_section {
+    webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    transition: all 0.5s;
+}
+.sspam span {
+    font-size: 14px;
+}
+.box_show_range_div {
+    border: 0px solid !important;
+    -webkit-box-shadow: 1px 1px 10px 2px rgba(0,0,0,0.75);
+    -moz-box-shadow: 1px 1px 10px 2px rgba(0,0,0,0.75);
+    box-shadow: 1px 1px 10px 2px rgba(0,0,0,0.75);
+	background:white;
+}
+.box_show_range_div h2 {
+    float: none !important;
+    margin: 0px !important;
+    position: inherit
+    padding: 8px 15px 8px 18px !important;
+    margin-bottom: 3% !important;
+    width: 100%;
+    padding: 10px 17px !important;
+    -moz-column-break-inside: avoid;
+    column-break-inside: avoid; 
+    text-align: center;
+    font-size: 14px !important;
+    background-color: #f1f1f1 !important;
+    border-bottom: 1px solid #aaa !important;
+    color: #8f0000;
+    line-height: 10px !important;
+    border-radius: 5px 5px 0 0 !important;;
+    font-weight: 900 !important;
+}
+
+#classic_controls #demand, #classic_controls #supply, #classic_controls #other, #classic_controls #electricity, #classic_controls #guide
+{
+	width:100% !important;
+	    margin-bottom: 2%;
+}
+div#classic_controls
+{
+	width:100% !important;
+}
+
+.left_remove
+{
+	padding-left:0px;
+}
+
+.right_remove
+{
+	padding-right:0px;
+}
+   
+.popover {
+    min-width: 400px;
+}
+p.small_p {
+    font-size: 12px;
+	text-align: justify;
+}
+h5.dfg4 {
+    font-size: 12px;
+    font-weight: 600;
+    text-align: center;
+    padding-left: 2%;
+}
+div#total_percapita_emissions_map p {
+    color: black !important;
+    font-size: 17px;
+    margin-left: 0px !important;
+    margin-top: 107px !important;
+    text-shadow: 1px 2px rgba(10, 10, 10, 0.34);
+}
+div#total_percapita_emissions_map {
+    background-color: transparent !important;
+    background-size: 87% 67% !important;
+    background-position: 90% 43%;
+}
+.toggle_radio label
+{
+	font-size:14px !important;
+}
+.toggle_radio
+{
+	left:10% !important;
+}
+#land_map > div {
+    left: 33%;
+}
+div#land_map {
+    background-size: 77% 90% !important;
+    background-repeat: no-repeat;
+    width: 30%;
+    background-position: 66% 54%;
+	
+}
+div#land_map {   
+	background-image: url(../../assets/images/assam68.gif);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 24%;
+}
+
+
+
+div#PercentLand h4 {
+    font-size: 14px;
+}
+div#PercentLand td {
+    font-size: 13px;
+    text-align: left;
+    padding-left: 5px;
+}
+div.warning_option p {
+    padding: 5px;
+    margin-bottom: 0;
+    font-size: 13px;
+}
+.tr_cls {
+    background-color: #66c266;
+    font-size: 12px !important;
+}
+
+div#assumption tr {
+    font-size: 11px;
+}
+
+
+.sspam {
+    padding-top: 6px;
+    color: white;
+    font-weight: 600;
+}
+.range_sliderr {
+    background: url(../../assets/images/mm.jpg);
+   background-size: 100% 100%;
+    padding-top: 2% !important;
+    padding-bottom: 1% !important;
+	margin-bottom: 1%;
+}
+
+input[type='range']  {
+		-webkit-appearance: none ;
+		width:200px;
+	}
+	input[type='range']::-webkit-slider-runnable-track {
+		-webkit-appearance: none ;
+		appearance: none ;
+		border-radius: 5px;
+		box-shadow: inset 1px 1px 1px rgba(000,000,000,0.10);
+		background-color: #808480;
+		height: 8px;
+		vertical-align:middle;
+		border: none;
+		cursor: pointer;
+	}
+	input[type='range']::-webkit-slider-thumb {
+		-webkit-appearance: none;
+		border-radius: 100%;
+		background-color: #7e0b80;
+		box-shadow: inset 0 0 0 4px #CCC, inset 0 0 4px #CCC, inset 0 0 0 4px #CCC;
+		height: 22px;
+		width: 22px;
+		vertical-align:middle;
+		border: none;
+		cursor: pointer;
+		margin-top: -6px;
+	}
+	input[type='range']::-webkit-slider-thumb:hover { 
+		background: black;
+	}
+	input[type='range']:active::-webkit-slider-thumb { 
+		background: black; 
+	}
+	input[type='range']::-moz-range-track{
+		-moz-appearance: none ;
+		border-radius: 5px;
+		box-shadow: inset 1px 1px 1px rgba(000,000,000,0.10);
+		background-color: #CCC;
+		height: 8px;
+		vertical-align:middle;
+		margin:0; padding:0;
+		border: none;
+		cursor: pointer; 
+	}
+	input[type='range']::-moz-range-thumb {
+		-moz-appearance: none ;
+		border-radius: 100%;
+		background-color: green;
+		box-shadow: inset 0 0 0 4px #CCC, inset 0 0 4px #CCC, inset 0 0 0 4px #CCC;
+		height: 22px;
+		width: 22px;
+		vertical-align:middle;
+		border: none;
+		cursor: pointer;
+		margin-top: -6px;
+	}
+	input[type='range']::-moz-range-thumb:hover { 
+		background: red; 
+	}
+	input[type='range']:active::-moz-range-thumb { 
+		background: red; 
+	}
+	input[type=range]::-ms-track {
+		width: 100%;
+		height: 8px;
+		cursor: pointer;
+		animate: 0.2s;
+		background: transparent;
+		border-color: transparent;
+		border-width: 39px 0;
+		color: transparent;
+	}
+	input[type=range]::-ms-fill-lower {
+		background: #CCC;
+		border: 0px solid #000101;
+		border-radius: 50px;
+		box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+	}
+	input[type=range]::-ms-fill-upper {
+		background: #CCC;
+		border: 0px solid #000101;
+		border-radius: 50px;
+		box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+	}
+	input[type=range]::-ms-thumb {
+		box-shadow: inset 0 0 0 4px #CCC, inset 0 0 4px #CCC, inset 0 0 0 4px #CCC;
+		border: 0px solid #000000;
+		height: 22px;
+		width: 22px;
+		border-radius: 100%;
+		background: green;
+		cursor: pointer;
+		margin-top: -2px;	
+	}
+
+#g_assump tr:nth-child(3) {
+    display: none;
+}
+.clear_class {
+    clear: both;
+}
+.key_jhn {
+    width: 90%;
+    margin: 0 auto;
+}
+
+
+.key_jhn a.level1 {
+    background-color: #F44545;
+}
+
+.key_jhn a.level2 {
+    background-color: #FFAE55;
+}
+
+.key_jhn a.level3 {
+   background-color: #EFDD60;
+}
+
+.key_jhn a.level4 {
+    background-color: #92C979;
+}
+
+.key_jhn a{
+    padding: 5% 8% 5% 8%;
+    color: white;
+    font-weight: 600;
+}
+
+table#g_assump td {
+    font-size: 13px;
+    padding-left: 1%;
+}
+a.bbrenewables {
+    padding: 0% 13% 1% 3%;
+    background: #8bbc21;
+    margin-left: 5%;
+}
+
+a.bbConventional {
+    padding: 0% 13% 1% 3%;
+    background: #070e15;
+    margin-left: 5%;
+}
+
+.bbbio {
+    padding: 0% 13% 1% 3%;
+    background: #428bca;
+    margin-left: 5%;
+}
+
+div#dependency_chart {
+    display: none;
+}
+div#story_Tel_demand {
+    display: none;
+}
+div#assumption tr:last-child {
+    display: none;
+}
+table#story_supply th {
+    padding-right: 10% !important;
+}
+
+div#land_map {
+    background-size: 77% 90% !important;
+    background-repeat: no-repeat !important;
+    width: 30% !important;
+    background-position: 66% 54%;
+}
+span.rem_color {
+    padding: 0% 1% 0% 9%;
+    background: #8bbc21;
+    margin-left: 6%;
+}
+span.conv_color {
+    padding: 0% 1% 0% 9%;
+    background: #010001;
+    margin-left: 6%;
+}
+
+span.bioo_color {
+    padding: 0% 1% 0% 9%;
+    background: #2462a8;
+    margin-left: 6%;
+}
+div#guide h2 {
+    margin-bottom: 2% !important;
+}
+
+table#story_supply td {
+    padding-right: 10%;
+}
+
+.tour-backdrop {
+    display: none;
+}
+div#step-0 {
+    display: none !important;
+}
+.tour-step-background {
+    display: none;
+}
+.collapse .name {
+    width: 80% !important;
+}
+div#feedback_btn {
+    text-align: right;
+    padding-top: 1.5%;
+}
+div#feedback_btn button {
+    font-size: 15px;
+    border: 0px;
+    font-weight: 600;
+	outline: 0px;
+	background: rgb(243, 122, 93) !important;
+}
+#pathway_box {
+            border: rgb(243, 122, 93) !important;
+    background-color: rgb(243, 122, 93) !important;
+    border-radius: 5px;
+}
+div#footerr {
+    background: rgb(243, 122, 93) !important;
+    padding-top: 0.6%;
+    padding-bottom: 0.6%;
+    color: white;
+    font-size: 15px;
+    text-align: center;
+    font-weight: 900;
+} 
+
+div#footerr .footer_links a {
+    color: #2aef30 !important;
+    border-bottom: 2px solid;
+}
+div#main_menu_header ul.menu_22 a {
+    color: black;
+    padding: 5px;
+    text-decoration: none;
+}
+
+div#main_menu_header  a.current {
+    color: #7e0b80 !important;
+    border-bottom: 2px solid #7e0b80;
+    font-weight: 900 !important;
+    text-decoration: none;
+}
+
+#classic_controls table td.name1 a {
+    color: black;
+    font-weight: 600;
+}
+
+#classic_controls table td.name a {
+    font-weight: 600;
+}
+.key_jhn span {
+    font-weight: 600;
+    font-size: larger;
+}
+
+select#year_demand {
+    width: 8%;
+	top: -255px !important;
+	    z-index: 1;
+}
+select#year_supply {
+    width: 8%;
+    top: -288px !important;
+    left: 903px !important;
+	    z-index: 1;
+}
+div#custom-legend1 .legend-item5a {
+    display: none;
+}
+div#curTab {
+    font-size: 12px;
+}
+#custom-legend1 .legend-item6a {
+    display: none;
+}
+
+#custom-legend0 .legend-item6a {
+    display: none;
+}
+
+
+#display-data0 #SeriesName {
+    width: 100% !important;
+}
+
+#display-data1 #SeriesName {
+    width: 100% !important;
+}
+
+
+#supply_chart #display-data1 #SeriesName {
+    width: 100% !important;
+}
+
+
+
+div#display-data1 .mmtts {
+    width: 10% !important;
+    text-align: center !important;
+}
+
+#total_percapita_emissions_chart #display-data1 .mmtts {
+    width: 12% !important;
+    text-align: center !important;
+}
+  
+
+
+.vbnb #display-data1 .mmtts {  
+    width: 10% !important;
+    text-align: center !important;
+}
+
+
+.form-control 
+{
+   height: 25px;
+    padding: 2px 4px;
+    font-size: 11px;
+}
+#display-data0 .mmtts {
+    width: 12% !important;
+    text-align: center;
+   
+}
+
+.mkitrz div#display-data1 .mmtts {
+    width: 12% !important;
+    text-align: center !important;
+}
+
+.dk tr {
+    font-size: 12px;
+}
+div#electricity_overgeneration .mmtts {
+    width: 12% !important;
+}
+
+#total_percapita_emissions_chart #display-data1 #SeriesName
+{
+    width:100% !important;
+}
+.dk h4 {
+    font-size: 14px;
+}
+
+
+div#warningss p {
+    font-size: 15px;
+    border: 2px solid black;
+	padding: 0.5%;
+	    
+}
+div#graph_caht_section {
+    margin-top: 1% !important;
+}

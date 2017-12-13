@@ -1,0 +1,1232 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" / >
+    <title>Gujarat State Energy Calculator</title>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/assets/font_awm/css/font-awesome.css">
+    <link href='/assets/application.css' media='screen' rel='stylesheet' type='text/css' />
+    <link href='/assets/application_custom.css' media='screen' rel='stylesheet' type='text/css' />
+    <script src='/assets/application_custom.js' type='text/javascript'></script>
+    <style>
+            #story_supply tr:first-child {
+        display: none !important;
+        }
+        #story_supply tr:last-child {
+            display: none !important;
+        }
+       
+        #SeriesName {
+            font-size: 11px;
+            padding-top: 3%;
+        }
+        
+        span.footer_links a
+        {
+            color: #dc6f04 !important;
+            border-bottom: 2px solid;
+         }
+        #sovial_ioco a
+        {
+            font-weight: 900;
+            margin-left: 7%;
+            color: white !important;
+            border-bottom: 2px solid;
+            text-decoration: none;
+        }
+    </style>
+    
+    <script>
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-17161700-2']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+    
+     <!------top most header strat start---------------->
+     <div class="dddfkjfk">
+    <div id='top_bar_header'>
+      <div class='rows' id='topbar2'>
+        <div class='container'>
+          <!------pathway name start---------------->
+          <div class="col-md-6 col-xs-12">
+             <div id='curTab'>
+              <span class="menu_name_gets">&nbsp;All Energy </span>
+              <span id='curPath'>-Default Pathway</span>
+            </div>
+          
+          </div>
+          <!------pathway name finish---------------->
+          <!------help social start---------------->
+           <div class="col-md-6 col-xs-12" id="sovial_ioco" >
+             
+               <a href='/assets/onepage/new/4/Introduction to GSEC 2050.pdf' class="innyy" target='_blank'>
+                    Introduction to GSEC 2050
+              </a>
+                <a href='/assets/onepage/new/4/How to use this tool.pdf' class=""  target='_blank'>
+                    How to use this tool
+              </a>
+            
+          </div>
+            <!------help social finish---------------->
+        </div>
+       </div>
+      </div>
+    <!------top most header finish---------------->
+   
+    
+    <!------top_bottom_header start---------------->
+      <div id="top_bottom_header">
+        <div class='rows' id='topbar3'>
+          <div class='container'>
+             <!------logo img  start---------------->
+            <div class="col-md-2" id="logo_kk">
+              <a href='javascript:void(0)' id='logoImg' onclick='return sitevisit();' target='_new'>
+                <img src='../../assets/images/ass_logo.png'>
+              </a>
+            </div>
+             <!------logo img finish---------------->
+             <!------main_menu_header start--------->
+            <div class="col-md-8" id="main_menu_header">
+            
+               <ul class='menu_22'>
+                  <li>
+                    <a   class="current" href='#' id="home_page_set" href='#'  onclick="twentyfifty.switchView('primary_energy_chart')">All Energy</a>
+                  </li>
+                  <li>
+                    <a  id="costt_total" class="" href='#'  onclick="twentyfifty.switchView('total_cost')">Energy Costs</a>
+                  </li>
+                  <li>
+                    <a href='#' class="" onclick="twentyfifty.switchView('electricity')">Electricity</a>
+                  </li>
+                  <!--<li>
+                    <a href='#' onclick="twentyfifty.switchView('energy_security')">Energy Security</a>
+                  </li>-->
+                  <li>
+                    <a href='#' onclick="twentyfifty.switchView('emissions')">Energy Emissions</a>
+                  </li>
+                  <li>
+                    <a href='#' onclick="twentyfifty.switchView('sankey')">Energy Flows</a>
+                  </li>
+                  <li>
+                    <a href='#' onclick="twentyfifty.switchView('map')">Land Requirement</a>
+                  </li>
+                  <!--<li>
+                    <a href='#' onclick="twentyfifty.switchView('grid_balancing_summer')">Grid Balancing</a>
+                  </li>-->
+                  <li>
+                    <a href='#' onclick="twentyfifty.switchView('my_story')">My Story</a>
+                  </li>
+                  <li>
+                    <a href='#' onclick="twentyfifty.switchView('assumptions')">Assumptions</a>
+                  </li>
+                </ul>
+             </div>
+           <!------main_menu_header finish---------->
+           
+               <!------mfeedback button start---------->
+            <div class="col-md-2" id="feedback_btn">
+                <a href=" https://goo.gl/forms/DNlwyVwiyUASVTEi2" target="_blank"><button type="button" class="btn-success btn-lg">Submit Feedback</button></a>
+            </div>
+            
+                <!------mfeedback button finish---------->
+          </div>
+        </div>
+      </div>
+     <!------top_bottom_header finish---------------->
+        </div>
+     <!------banner start---------------->
+     
+     
+     <!------banner finish---------------->
+     
+      <!------graph and chat section start---------------->
+        <div id="graph_caht_section">
+            <div class='rows' id='topbar4'>
+            <div class='container'>
+        
+            <div id='display_table'>
+                <div class='diaplay_nav' id='display'></div>
+            </div>
+            <div id='results'></div>
+            <div id='print_div'></div>
+            <div class='warning_option' id='warning'>
+                <!-- /%h5 Warning -->
+                <!-- /%ul -->
+                <!-- /  %li -->
+                <!-- /    %a{href:'javascript:void(0)', onclick:"return false"} -->
+                <!-- /      %img(src="../../assets/images/icon/energy-security-disabled.gif") -->
+                <!-- /  %li -->
+                <!-- /    %a{href:'javascript:void(0)', onclick:"return false"} -->
+                <!-- /      %img(src="../../assets/images/icon/electricity-disabled.gif") -->
+                <!-- /  %li -->
+                <!-- /    %a{href:'javascript:void(0)', onclick:"return false"} -->
+                <!-- /      %img(src="../../assets/images/icon/land-use-disabled.gif") -->
+                <!-- /  %li -->
+                <!-- /    %a{href:'javascript:void(0)', onclick:"return false"} -->
+                <!-- /      %img(src="../../assets/images/icon/institutions-disabled.gif") -->
+            </div>
+            </div>
+            
+            <div id='pathway_box'>
+                <div class="col-md-8 col-xs-12 sspam">
+                    <span>Create your own pathway by selecting effort levels 1 to 4 for each sector or choose an example pathway.</span>
+                </div>
+                <div class="col-md-4 col-xs-12 sspam_select">
+                    <select id="pathway_option" class="form-control" onchange='if(this.value == 0 ) return false; else twentyfifty.switchPathway(this.value);'>
+                        <option value='0'>------Choose from Example Scenarios------</option>
+                        <option value='1110111111111111011111111102011110111111111110112011102'>Least Effort Scenario (All at level 1)</option>
+                        <option value='4440444444444444044444444402044440443444444440442044402'>Heroic Effort Scenario (All Level 4s)</option>
+                        <option value='3330333333333333033333333302033330333333333330332033302'>Aggressive Effort Scenario (All Level 3s)</option>
+                        <option value='2220222222222222022222222202022220222222222220222022202'>Determined Effort Scenario (All Level 2s)</option>
+                       
+                        <option value='2220222222222222022222222202022220222222221120222022202'>Default</option>
+                        <option value='11201212424444420323233222020222402422222211202420242022222'>Maximum RE and Electic Vehicle Pathway</option>
+                        <option value='22202222222244220223223222020222202222222211202220222022222'>State Vision Pathway</option>
+                       <!-- <option value='11101112212222210222222111020444104434111445404120112022222'>Least Cost Pathway</option>-->
+                        <option value='11104422424444420414314222020444404422242445404420442022222'>Re Push and Low Emissions Pathways</option>
+                    </select>
+                </div>
+            </div>
+            
+            
+            
+            <div class='tour_2 range_sliderr' id='classic_controls'>
+                    <div class="range_sliderr_inner">
+                     <div class='container'>
+                     
+                     
+                    
+                     
+                     
+            
+                <div class="col-md-6 col-xs-12 left_remove  level_num_span">
+                              
+            <div class='tour_3 box_show_range_div col-md-12' id='demand'>
+             
+                <h2 data-step="1" data-intro="This is a tooltip!">Demand</h2>
+                <table>
+               <table>
+                    <tr class='incremental' id='r27'>
+                        <td class='name' cellpadding='10'><a href='/assets/onepage/new/6/Growth of the Economy.pdf' target='_new' title1='' onmouseover='twentyfifty.startDemo(27); return true;' onmouseout='twentyfifty.stopDemo(27);return true;'>Growth of the Economy</a></td>
+                        
+                        <td width='20px'><a href='/assets/onepage/new/2/Growth of Economy.pdf' target='_new' onmouseover='twentyfifty.startDemo(27); return true;' onmouseout='twentyfifty.stopDemo(27);return true;'><img height='13px' width='13px'  src='/assets/images/get_info.png'></a></td>
+                        
+                        <td  id="a_growth" class='choice'><a title="High Growth Scenario. Assumes 9% CAGR till 2050" href='#' data-choicenumber='27' data-choicelevel='1' id='c27l1'  class='choiceLink'>A</a></td>
+                        
+                        <td  id="b_growth" class='choice'><a title="Medium Growth Scenario. Economy grows at a rate of 8% (CAGR) till 2050" href='#' data-choicenumber='27' data-choicelevel='2' id='c27l2'  class='choiceLink'>B</a></td>
+                        
+                        <td  id="c_growth" class='choice'><a title="Relatively Low Growth Scenario with 7% CAGR till 2050." href='#' data-choicenumber='27' data-choicelevel='3' id='c27l3'  class='choiceLink'>C</a></td>
+                        
+                        <td class='choice' id='d27'></td>
+                    </tr>
+                    
+                    
+                     <tr  class='incremental' id='r54'>
+                    
+                    <td   class='name' cellpadding='10'><a title="Since the industrial revolution, the world's temperature has risen by almost 1˚C" onmouseover='twentyfifty.startDemo(54); return true;' onmouseout='twentyfifty.stopDemo(54);return true;'>Temperature Stress</a></td>
+                    
+                    
+                    <td width="20px"></td>
+                    
+                    <td class='choice'><a href='#' data-choicenumber='54' data-choicelevel='1' id='c54l1' title='Assumes no external temperature rise till 2050. (Lowest possible of the range)' class='choiceLink' >A</a></td>
+                    
+                    <td class='choice'><a href='#' data-choicenumber='54' data-choicelevel='2' id='c54l2' title='Assumes a 2 degree Celsius temperature rise till 2050.' class='choiceLink' >B</a></td>
+                    
+                    <td class='choice'><a href='#' data-choicenumber='54' data-choicelevel='3' id='c54l3' title='An aggressive scenario assuming a 4 degree Celsius temperature rise till 2050.' class='choiceLink' >C</a></td>
+                    
+                    <td class='choice' id='d54'></td></tr>
+                    
+                    
+                    <tr height='10'>
+                        <td></td>
+                    </tr>
+                </table>
+                <!-- - structure.choices[25..42].each do |choice| -->
+               <table style='margin-bottom:5px;'>
+    <tr class='incremental' id='1'>
+        <td class='name1' width='45%'><a href='javascript:void(0);' onclick='switchOpenCloseIcon(1); return false' data-toggle='collapse' data-target='#collapseme1' onmouseover='twentyfifty.startGroupDemo([29, 30, 31, 32, 34, 35]); return true;' onmouseout='twentyfifty.stopGroupDemo([29, 30, 31, 32, 34, 35]);return true;'>Transport</a></td>
+      
+       
+        <td class='choice1' width='35%'>
+            <input class="range_design" id="trans_range" type="range" min="1" max="4" value="2">
+        </td>
+        <td width='10%' id='dd-1' align='center'><span class="tran_val">2</span><a href='javascript:void(0);' onclick='switchOpenCloseIcon(1); return false' data-toggle='collapse' data-target='#collapseme1'><img id='m-1' width='15px' src='/assets/images/open.png'></td></tr></table>
+                                    <table class='collapse out' id='collapseme1'>
+                            <tr class='incremental' id='r29'>
+                            
+                                <td class='name' cellpadding='10'><a href='/assets/onepage/new/6/Passenger Transport Demand.pdf' target='_new' title='The domestic passenger demand was 7,752 km per capita per year in 2015.' onmouseover='twentyfifty.startDemo(29); return true;' onmouseout='twentyfifty.stopDemo(29);return true;'>Passenger Transport Demand </a><a href='/assets/onepage/new/6/Passenger Transport Demand.pdf' target='_new' onmouseover='twentyfifty.startDemo(29); return true;' onmouseout='twentyfifty.stopDemo(29);return true;'><img height='13px' width='13px'  src='/assets/images/get_info.png'></a></td>
+                                
+                                <td class='choice'><a href='#' data-choicenumber='29' data-choicelevel='1' id='c29l1' title='The annual demand for mobility increases to 22445 km per capita per year in 2050' class='choiceLink'>1</a></td>
+                                
+                                <td class='choice'><a href='#' data-choicenumber='29' data-choicelevel='2' id='c29l2' title='An improved outlook, leads to distance travelled  annually per person to 20483 km in 2050.' class='choiceLink'>2</a></td>
+                                
+                                <td class='choice'><a href='#' data-choicenumber='29' data-choicelevel='3' id='c29l3' title='An aggressive policy to reduce passenger demand growth. Yearly demand rises slower and reaches 18512 km per capita in 2050' class='choiceLink'>3</a></td>
+                                
+                                <td class='choice'><a href='#' data-choicenumber='29' data-choicelevel='4' id='c29l4' title='A highly ambitious  transit oriented plan optimizes annual passenger transport demand growth. It grows to 17526 km per capita per year in 2050.' class='choiceLink'>4</a></td>
+                                
+                                
+                                <td class='choice' id='d29'></td>
+                            </tr>
+                            <tr class='incremental' id='r30'>
+                                <td class='name' cellpadding='10'><a href='/assets/onepage/new/6/Passenger Transport Mode.pdf' target='_new' title='Share in the total passenger traffic: (Road, Rail, Air, Water) = (86.5%, 12.9%, 0.5%, 0.1%) in 2015' onmouseover='twentyfifty.startDemo(30); return true;' onmouseout='twentyfifty.stopDemo(30);return true;'>Passenger Transport Mode</a><a href='/assets/onepage/new/6/Passenger Transport Mode.pdf' target='_new' onmouseover='twentyfifty.startDemo(30); return true;' onmouseout='twentyfifty.stopDemo(30);return true;'><img height='13px' width='13px'  src='/assets/images/get_info.png'></a></td>
+                               
+                                <td class='choice'><a href='#' data-choicenumber='30' data-choicelevel='1' id='c30l1' title='Share in the total passenger traffic: (Road, Rail, Air, Water) = (84%, 12.%, 3.8%, 0.2%) in 2050' class='choiceLink'>1</a></td>
+                                
+                                <td class='choice'><a href='#' data-choicenumber='30' data-choicelevel='2' id='c30l2' title='An improved outlook, wherein there is an increase in the share of rail transport.  Share in the total passenger traffic: (Road, Rail, Air, Water) = (81.8%, 15%, 2.9%, 0.3%) in 2050' class='choiceLink'>2</a></td>
+                                
+                                <td class='choice'><a href='#' data-choicenumber='30' data-choicelevel='3' id='c30l3' title='A rise in the rail transport share. Share in the total passenger traffic: (Road, Rail, Air, Water) = (79.7%, 17.6%, 2.1%, 0.6) in 2050  ' class='choiceLink'>3</a></td>
+                                
+                                <td class='choice'><a href='#' data-choicenumber='30' data-choicelevel='4' id='c30l4' title='A highly optimistic scenario in favor of rail based transport mode. Share in the total passenger traffic: (Road, Rail, Air, Water) = (78.6%, 19.3%, 1.3%, 0.8%) in 2050 ' class='choiceLink'>4</a></td>
+                                
+                                <td class='choice' id='d30'></td>
+                            </tr>
+                            <tr class='incremental' id='r31'>
+                                <td class='name' cellpadding='10'><a href='/assets/onepage/new/6/Shift to Public Transport.pdf' target='_new' title='Share of public and private transport is 48% and 52% respectively in 2050.' onmouseover='twentyfifty.startDemo(31); return true;' onmouseout='twentyfifty.stopDemo(31);return true;'>Shift to Public Transport </a> <a href='/assets/onepage/new/6/Shift to Public Transport.pdf' target='_new' onmouseover='twentyfifty.startDemo(31); return true;' onmouseout='twentyfifty.stopDemo(31);return true;'><img height='13px' width='13px'  src='/assets/images/get_info.png'></a></td>
+
+                                <td class='choice'><a href='#' data-choicenumber='31' data-choicelevel='1' id='c31l1' title='Share of public and private transport is 50% each in 2050.' class='choiceLink'>1</a></td>
+                                
+                                <td class='choice'><a href='#' data-choicenumber='31' data-choicelevel='2' id='c31l2' title='Share of public and private transport is 60% and 40% respectively in 2050..' class='choiceLink'>2</a></td>
+                                
+                                <td class='choice'><a href='#' data-choicenumber='31' data-choicelevel='3' id='c31l3' title='Share of public and private transport is 70% and 30% respectively in 2050.' class='choiceLink'>3</a></td>
+                                
+                                <td class='choice'><a href='#' data-choicenumber='31' data-choicelevel='4' id='c31l4' title='Share of public and private transport is 80% and 20% respectively in 2050.' class='choiceLink'>4</a></td>
+                                
+                                <td class='choice' id='d31'></td>
+                            </tr>
+                            <tr class='incremental' id='r32'>
+                                <td class='name' cellpadding='10'><a href='/assets/onepage/new/6/Electric and Fuel Cell Vehicles.pdf' target='_new' title='The share of EV in cars and 2W and 3W was 0% in 2015. The share of FCV’s in cars was also 0% in 2015.' onmouseover='twentyfifty.startDemo(32); return true;' onmouseout='twentyfifty.stopDemo(32);return true;'>Electric and Fuel Cell Vehicles</a> <a href='/assets/onepage/new/6/Electric and Fuel Cell Vehicles.pdf' target='_new' onmouseover='twentyfifty.startDemo(32); return true;' onmouseout='twentyfifty.stopDemo(32);return true;'><img height='13px' width='13px'  src='/assets/images/get_info.png'></a></td>
+                                
+                                <td class='choice'><a href='#' data-choicenumber='32' data-choicelevel='1' id='c32l1' title='Assumes a slow but rising share of EV penetration for 2W, 3W and taxis to 12%,  and 2% for cars and bus. Share of FCVs in cars is almost zero in 2050' class='choiceLink m1'>1</a></td>
+                                
+                                <td class='choice'><a  href='#' data-choicenumber='32' data-choicelevel='2' id='c32l2' title='Assumes a favorable scenario for EV penetration, share of cars  and 2W rises to 40%, 3W, taxis and buses to 99% whereas share of FCV’s in cars and buses to 2% and 1% respectively in 2050.'>2</a></td>
+                                
+                                <td class='choice'><a href='#' data-choicenumber='32' data-choicelevel='3' id='c32l3' title='An more favorable scenario, with EV penetration for cars at 52%, 2W- 56% in 2050. 3W, taxis and buses-100% by 2040 .The share of FCV’s in cars and buses become 4% and 2% respectively by 2040.' class='choiceLink m3'>3</a></td>
+                                
+                                <td class='choice'><a href='#' data-choicenumber='32' data-choicelevel='4' id='c32l4' title='A highly optimistic scenario wherein EV shares rise to 82% for cars, 93% for 2W by 2050 . 3W, taxis, buses to 100% in 2030. Remaining  run on fuel cells and CNG' class='choiceLink m4'>4</a></td>
+                                
+                                <td class='choice' id='d32'></td>
+                            </tr>
+                            <tr class='incremental' id='r34'>
+                                <td class='name' cellpadding='10'><a href='/assets/onepage/new/6/Freight Transport Demand.pdf' target='_new' title='The Freight Transport Demand in 2015 was 120 BTKMs.' onmouseover='twentyfifty.startDemo(34); return true;' onmouseout='twentyfifty.stopDemo(34);return true;'>Freight Transport Demand</a><a href='/assets/onepage/new/6/Freight Transport Demand.pdf' target='_new' onmouseover='twentyfifty.startDemo(34); return true;' onmouseout='twentyfifty.stopDemo(34);return true;'><img height='13px' width='13px'  src='/assets/images/get_info.png'></a></td>
+                               
+                                <td class='choice'><a href='#' data-choicenumber='34' data-choicelevel='1' id='c34l1' title='Assumes a growth in freight transport with rising GDP to 943 BTKMs by 2050.' class='choiceLink'>1</a></td>
+                                
+                                <td class='choice'><a href='#' data-choicenumber='34' data-choicelevel='2' id='c34l2' title='Assumes that with rising GDP, freight transport demand does rise but at a moderate pace, reaches 860 BTKM’s by 2050 ' class='choiceLink'>2</a></td>
+                                
+                                <td class='choice'><a href='#' data-choicenumber='34' data-choicelevel='3' id='c34l3' title='Assumes an efficient logistical planning scenario with rising GDP leading to moderate rise in freight transport to 819 BTKM’s by 2050' class='choiceLink'>3</a></td>
+                                
+                                <td class='choice'><a href='#' data-choicenumber='34' data-choicelevel='4' id='c34l4' title='A highly optimistic scenario wherein best practices are followed in logistical planning. Rising GDP does lead to growth in freight transport but at a slow pace to 778 BTKMs by 2050' class='choiceLink'>4</a></td>
+                                
+                                
+                                <td class='choice' id='d34'></td>
+                            </tr>
+                            <tr class='incremental' id='r35'>
+                                <td class='name' cellpadding='10'><a href='/assets/onepage/new/6/Freight Transport Mode.pdf' target='_new' title='Share of freight traffic: (Road, Rail, ,Water, Air)=(49.7%, 49.8%, 0.5, 0%) in 2015.' onmouseover='twentyfifty.startDemo(35); return true;' onmouseout='twentyfifty.stopDemo(35);return true;'>Freight Transport Mode</a> <a href='/assets/onepage/new/6/Freight Transport Mode.pdf' target='_new' onmouseover='twentyfifty.startDemo(35); return true;' onmouseout='twentyfifty.stopDemo(35);return true;'><img height='13px' width='13px'  src='/assets/images/get_info.png'></a></td>
+                         
+                                <td class='choice'><a href='#' data-choicenumber='35' data-choicelevel='1' id='c35l1' title='Assumes an unplanned scenario. Share in the total freight traffic: (Road, Rail, Water, Air) = (69.5%,29.3%, 1.1%,0%) in 2050' class='choiceLink'>1</a></td>
+                                <td class='choice'><a href='#' data-choicenumber='35' data-choicelevel='2' id='c35l2' title='Assumes a planned scenario. Share in the total freight traffic: (Road, Rail, Water, Air) = (62.7%,35.8%,1.5%, 0%) in 2050' class='choiceLink'>2</a></td>
+                                <td class='choice'><a href='#' data-choicenumber='35' data-choicelevel='3' id='c35l3' title='Assumes an efficient scenario. Share in the total freight traffic: (Road, Rail, Water, Air) = (58%, 40.2%, 1.8%, 0%) in 2050' class='choiceLink'>3</a></td>
+                                <td class='choice'><a href='#' data-choicenumber='35' data-choicelevel='4' id='c35l4' title='Assumes a major transition in freight transport share from road to rail.  Share in the total freight traffic: (Road, Rail, Water, Air) = (53.3%, 44.6%, 2.1%,0%) in 2050' class='choiceLink'>4</a></td>
+                                <td class='choice' id='d35'></td>
+                            </tr>
+                            <tr height='10'>
+                                <td></td>
+                            </tr>
+                        </table>
+               <table style='margin-bottom:5px;'>
+
+        <tr class='incremental' id='2'>
+        <td class='name1' width='45%'><a href='javascript:void(0);' onclick='switchOpenCloseIcon(2); return false' data-toggle='collapse' data-target='#collapseme2' onmouseover='twentyfifty.startGroupDemo([44]); return true;' onmouseout='twentyfifty.stopGroupDemo([44]);return true;'>Cooking</a></td>
+            <td class='choice1' width='35%'>
+                <input class="range_design" id="cook_range" type="range" min="1" max="4" value="2">
+            </td>
+         
+        <td width='10%' id='dd-2' align='center'><span class="cook_val">2</span><a href='javascript:void(0);' onclick='switchOpenCloseIcon(2); return false' data-toggle='collapse' data-target='#collapseme2'><img id='m-2' width='15px' src='/assets/images/open.png'></td></tr></table>
+        
+                <table class='collapse out' id='collapseme2'>
+                    <tr class='incremental' id='r44'>
+                    
+                    <td style="width:50%" class='name' cellpadding='10'><a href='/assets/onepage/new/6/Fuel Shift and Cookstove Efficiency.pdf' target='_new' title='83 % of rural households use non-clean fuels. 17% uses LPG.' onmouseover='twentyfifty.startDemo(44); return true;' onmouseout='twentyfifty.stopDemo(44);return true;'>Fuel Shift and Cookstove Efficiency </a><a href='/assets/onepage/new/6/Fuel Shift and Cookstove Efficiency.pdf
+Buildings' target='_new' onmouseover='twentyfifty.startDemo(44); return true;' onmouseout='twentyfifty.stopDemo(44);return true;'><img height='13px' width='13px'  src='/assets/images/get_info.png'></a></td>
+                    
+                  <td class='choice'><a href='#' data-choicenumber='44' data-choicelevel='1' id='c44l1' title='A highly pessimistic scenario wherein 48% of Rural use non-clean fuels. 36% use LPG and only 16 % use electricity for cooking in 2050' class='choiceLink' >1</a></td>
+                    
+                    <td class='choice'><a href='#' data-choicenumber='44' data-choicelevel='2' id='c44l2' title='A clean energy scenario wherein PNG access is made available to 2.7% of the rural households (from nil at present).   Only 36% rural households use non-clean fuels..' class='choiceLink' >2</a></td>
+                    
+                    <td class='choice'><a href='#' data-choicenumber='44' data-choicelevel='3' id='c44l3' title='Assumes an aggressive campaign towards clean energy with 28% rural households use electricity, 37% LPG and 3.6% PNG. ' class='choiceLink' >3</a></td>
+                    
+                    <td class='choice'><a href='#' data-choicenumber='44' data-choicelevel='4' id='c44l4' title='A highly efficient scenario wherein 37% rural households use electricity and 37% depend on LPG (2050). ' class='choiceLink' >4</a></td>
+                    
+                    <td class='choice' id='d44'></td></tr>
+                    <tr height='10'><td></td></tr>
+                </table>
+                <table style='margin-bottom:5px;'>
+    <tr class='incremental' id='3'>
+        <td class='name1'  width='45%'><a href='javascript:void(0);' onclick='switchOpenCloseIcon(3); return false' data-toggle='collapse' data-target='#collapseme3' onmouseover='twentyfifty.startGroupDemo([54, 36, 37, 38, 39, 40]); return true;' onmouseout='twentyfifty.stopGroupDemo([54, 36, 37, 38, 39, 40]);return true;'>Buildings</a></td>
+        <td class='choice1' width='35%'>
+            <input class="range_design" id="building_range" type="range" min="1" max="4" value="2">
+         </td>
+        <td width='10%' id='dd-3' align='center'><span class="building_val">2</span><a href='javascript:void(0);' onclick='switchOpenCloseIcon(3); return false' data-toggle='collapse' data-target='#collapseme3'><img id='m-3' width='15px' src='/assets/images/open.png'></td></tr></table>
+                <table class='collapse out' id='collapseme3'>
+                  <!--  <tr class='incremental' id='r54' style="display:none">
+                    
+                    <td class='name' cellpadding='10'><a title='Assumes a 2 degree Celsius temperature rise till 2050.' onmouseover='twentyfifty.startDemo(54); return true;' onmouseout='twentyfifty.stopDemo(54);return true;'>Temperature Stress</a></td>
+                    
+                    
+                    
+                    <td class='choice'><a href='#' data-choicenumber='54' data-choicelevel='1' id='c54l1' title='Assumes no external temperature rise till 2050. (Lowest possible of the range)' class='choiceLink' >1</a></td>
+                    
+                    <td class='choice'><a href='#' data-choicenumber='54' data-choicelevel='2' id='c54l2' title='Assumes a 2 degree Celsius temperature rise till 2050.' class='choiceLink' >2</a></td>
+                    
+                    <td class='choice'><a href='#' data-choicenumber='54' data-choicelevel='3' id='c54l3' title='An aggressive scenario assuming a 4 degree Celsius temperature rise till 2050.' class='choiceLink' >3</a></td>
+                    
+                    <td class='choice' id='d54'></td></tr>-->
+                    
+                    <tr class='incremental' id='r36'>
+                    <td class='name' cellpadding='10'>
+                    <a href='/assets/onepage/new/6/Urban Planning.pdf' target='_new' title='Structure of cities (Residential Floor Space): (High Rise, Horizontal, Affordable Housing) = (33%,64%,3%) in 2015.' onmouseover='twentyfifty.startDemo(36); return true;' onmouseout='twentyfifty.stopDemo(36);return true;'>Urban Planning</a><a href='/assets/onepage/new/6/Urban Planning.pdf' target='_new' onmouseover='twentyfifty.startDemo(36); return true;' onmouseout='twentyfifty.stopDemo(36);return true;'><img height='13px' width='13px'  src='/assets/images/get_info.png'></a>
+                    </td>
+                    <td class='choice'><a href='#' data-choicenumber='36' data-choicelevel='1' id='c36l1' title='Assumes structure of cities (Residential Floor Space): (High Rise, Horizontal, Affordable Housing) = (19%,67%,14%) in 2050.' class='choiceLink' >1</a></td>
+                    
+                    <td class='choice'><a href='#' data-choicenumber='36' data-choicelevel='2' id='c36l2' title='Assumes structure of cities (Residential Floor Space): (High Rise, Horizontal, Affordable Housing) = (24%, 62%,14%) In 2050.' class='choiceLink' >2</a></td>
+                    
+                    <td class='choice'><a href='#' data-choicenumber='36' data-choicelevel='3' id='c36l3' title='Assumes structure of cities (Residential Floor Space): (High Rise, Horizontal, Affordable Housing) = (41%, 45%,14%) in 2050.' class='choiceLink' >3</a></td>
+                    
+                    <td class='choice' id='d36'></td>
+                    
+                    </tr>
+                    <tr class='incremental' id='r37'>
+                    
+                    <td class='name' cellpadding='10'><a href='/assets/onepage/new/6/Penetration of Energy Efficient Envelope.pdf' target='_new' title='Penetration of smart buildings interventions in (1) Residential buildings: (High rise, Horizontal Development, Affordable Housing)= (5%, 3%, 0%) (2) Commercial buildings: 10% compliant buildings' onmouseover='twentyfifty.startDemo(37); return true;' onmouseout='twentyfifty.stopDemo(37);return true;'>Penetration of Energy Efficient Envelope </a><a href='/assets/onepage/new/6/Penetration of Energy Efficient Envelope.pdf' target='_new' onmouseover='twentyfifty.startDemo(37); return true;' onmouseout='twentyfifty.stopDemo(37);return true;'><img height='13px' width='13px'  src='/assets/images/get_info.png'></a></td>
+                   
+                    <td class='choice'><a href='#' data-choicenumber='37' data-choicelevel='1' id='c37l1' title='Assumes poor compliance to building efficiency standards i.e. ECBC code. In 2050, penetration of smart buildings interventions in (1) Residential buildings: (High rise, Horizontal Development, Affordable Housing)= (11%, 5%, 0%) (2) Commercial buildings: 25% compliant buildings' class='choiceLink' >1</a></td>
+                    
+                    <td class='choice'><a href='#' data-choicenumber='37' data-choicelevel='2' id='c37l2' title='Assumes a rising compliance of building efficiency standards i.e. ECBC code. In 2050, penetration of smart buildings interventions in (1) Residential buildings: (High rise, Horizontal Development, Affordable Housing)= (54%, 43%, 0%) (2) Commercial buildings: 50% compliant buildings' class='choiceLink' >2</a></td>
+                    
+                    <td class='choice'><a href='#' data-choicenumber='37' data-choicelevel='3' id='c37l3' title='Assumes aggressive adoption of building efficiency standards i.e. ECBC code. In 2050, penetration of smart buildings interventions in (1) Residential buildings: (High rise, Horizontal Development, Affordable Housing)= (81%, 60%, 0%) (2) Commercial buildings: 75% compliant buildings' class='choiceLink' >3</a></td>
+                    
+                    <td class='choice'><a href='#' data-choicenumber='37' data-choicelevel='4' id='c37l4' title='Assumes mandatory compliance of building efficiency standards i.e. ECBC code. In 2050, penetration of smart buildings interventions in (1) Residential buildings: (High rise, Horizontal Development, Affordable Housing)= (98%, 87%, 0%) (2) Commercial buildings: 100% compliant buildings' class='choiceLink' >4</a></td>
+                    
+                    <td class='choice' id='d37'></td></tr>
+                    
+                    <tr class='incremental' id='r38'><td class='name' cellpadding='10'><a title="(1) Residential- Configuration of Low (L), Medium (M) and High (H) efficiency devices: (77.6%, 15.5%, 7%) in 2015. Configuration of lighting devices: (Incandescent bulbs, Tube lights, CFL, LED): (66%, 33%, 0%, 0%) in 2015. (2) Commercial- Configuration of (L,M,H)= (44%,50%,6%) in 2015." href='/assets/onepage/new/6/Efficiency of Lighting and Appliances.pdf' target='_new'  onmouseover='twentyfifty.startDemo(38); return true;' onmouseout='twentyfifty.stopDemo(38);return true;'>Efficiency of Lighting and Appliances </a><a href='/assets/onepage/new/6/Efficiency of Lighting and Appliances.pdf' target='_new' onmouseover='twentyfifty.startDemo(38); return true;' onmouseout='twentyfifty.stopDemo(38);return true;'><img height='13px' width='13px'  src='/assets/images/get_info.png'></a></td>
+                    
+                    <td class='choice'><a href='#' data-choicenumber='38' data-choicelevel='1' id='c38l1' title='Assumes no improvement. (1) Residential- Configuration of Low (L), Medium (M) and High (H) efficiency devices: (78%,15%,7%) in 2050. Configuration of lighting devices: (Incandescent bulbs, Tube lights, CFL, LED): (0%, 10%, 0%, 90%) in 2050. (2) Commercial- Configuration of (L,M,H)= (44%,50%,6%) in 2050.' class='choiceLink' >1</a></td>
+                    
+                    <td class='choice'><a href='#' data-choicenumber='38' data-choicelevel='2' id='c38l2' title='Assumes an increased adoption of efficient devices. (1) Residential- Configuration of Low (L), Medium (M) and High (H) efficiency devices: (42%,39%,19%) in 2050. Configuration of lighting devices: (Incandescent bulbs, Tube lights, CFL, LED): (40%, 20%, 0%, 40%) in 2025. 100% LED in 2050. (2) Commercial- Configuration of (L,M,H)= (20%,50%,30%) in 2050.' class='choiceLink' >2</a></td>
+                    
+                    <td class='choice'><a href='#' data-choicenumber='38' data-choicelevel='3' id='c38l3' title='Assumes an aggressive uptake of highly efficient devices. (1) Residential- Configuration of Low (L), Medium (M) and High (H) efficiency devices: (12%,40%,48%) in 2050. Configuration of lighting devices: (Incandescent bulbs, Tube lights, CFL, LED): (33%, 17%, 0%, 50%) in 2025. 100% LED in 2050. (2) Commercial- Configuration of (L,M,H)= (10%,40%,50%) in 2050.' class='choiceLink' >3</a></td>
+                    
+                    <td class='choice'><a href='#' data-choicenumber='38' data-choicelevel='4' id='c38l4' title='Assumes a complete market transformation with no low efficient devices. (1) Residential- Configuration of Low (L), Medium (M) and High (H) efficiency devices: (2%,12%,86%) in 2050. Configuration of lighting devices: (Incandescent bulbs, Tube lights, CFL, LED): (22%, 11%, 0%, 67%) in 2025. 100% LED in 2050. (2) Commercial- Configuration of (L,M,H)= (0%,20%,80%) in 2050.' class='choiceLink' >4</a></td>
+                    
+                    <td class='choice' id='d38'></td></tr>
+                    
+                    
+                    <tr class='incremental' id='r39' style="display:none;">
+                    <td class='name' cellpadding='10'><a href='/assets/onepage/new/4/Commercial penetration of energy efficient envelope.pdf' target='_new' title='Assumes almost a 10% penetration of energy efficient residential buildings in 2015.' onmouseover='twentyfifty.startDemo(39); return true;' onmouseout='twentyfifty.stopDemo(39);return true;'>Commercial- Penetration of Energy Efficient Envelope </a><a href='/assets/onepage/new/4/Commercial penetration of energy efficient envelope.pdf' target='_new' onmouseover='twentyfifty.startDemo(39); return true;' onmouseout='twentyfifty.stopDemo(39);return true;'><img height='13px' width='13px'  src='/assets/images/get_info.png'></a></td>
+                    
+                    
+                    <td class='choice'><a href='#' data-choicenumber='39' data-choicelevel='1' id='c39l1' title='Assumes poor compliance to ECBC code with the share of compliant buildings reaching 25% by 2050' class='choiceLink' >1</a></td>
+                    
+                    <td class='choice'><a href='#' data-choicenumber='39' data-choicelevel='2' id='c39l2' title='Assumes a rising compliance of ECBC codes with the share of compliant buildings reaching 50% in 2050.' class='choiceLink' >2</a></td>
+                    
+                    <td class='choice'><a href='#' data-choicenumber='39' data-choicelevel='3' id='c39l3' title='Assumes aggressive adoption of ECBC compliance with the share of compliant buildings reaching 75% in 2050.' class='choiceLink' >3</a></td>
+                    
+                    <td class='choice'><a href='#' data-choicenumber='39' data-choicelevel='4' id='c39l4' title='Assumes mandatory compliance of ECBC codes in all new buildings with the share of compliant buildings reaching 100% by 2050.' class='choiceLink' >4</a></td>
+                    
+                    
+                    <td class='choice' id='d39'></td></tr>
+                    <tr class='incremental' id='r40' style="display:none;">
+                    
+                    <td class='name' cellpadding='10'><a title="Configuration of (L,M,H)= (44%,50%,6%) in 2015." href='/assets/onepage/new/4/Commercial- Efficiency of Lighting and Appliances.pdf' target='_new' title='Configuration of (L,M,H)= (44%,50%,6%) in 2015.' onmouseover='twentyfifty.startDemo(40); return true;' onmouseout='twentyfifty.stopDemo(40);return true;'>Commercial- Efficiency of Lighting and Appliances</a><a href='/assets/onepage/new/4/Commercial- Efficiency of Lighting and Appliances.pdf' target='_new' onmouseover='twentyfifty.startDemo(40); return true;' onmouseout='twentyfifty.stopDemo(40);return true;'><img height='13px' width='13px'  src='/assets/images/get_info.png'></a></td>
+                    
+                    
+                    <td class='choice'><a href='#' data-choicenumber='40' data-choicelevel='1' id='c40l1' title='Assumes no improvement in efficiency over base level (2015). Configuration of (L,M,H)= (50%,50%,0%) in 2050.' class='choiceLink' >1</a></td>
+                    
+                    <td class='choice'><a href='#' data-choicenumber='40' data-choicelevel='2' id='c40l2' title='Some improvement in efficiency is observed.  Configuration of (L,M,H)= (20%,50%,30%) in 2050.' class='choiceLink' >2</a></td>
+                    
+                    <td class='choice'><a href='#' data-choicenumber='40' data-choicelevel='3' id='c40l3' title='Assumes aggressive uptake of highly efficient devices in commercial sector.  Configuration of (L,M,H)= (10%,40%,50%) in 2050.' class='choiceLink' >3</a></td>
+                    
+                    <td class='choice'><a href='#' data-choicenumber='40' data-choicelevel='4' id='c40l4' title='Assumes a complete market transformation with no low efficient devices. Configuration of (L,M,H)= (0%,20%,80%) in 2050.' class='choiceLink' >4</a></td>
+                    
+                    <td class='choice' id='d40'></td></tr>
+                    <tr height='10'><td></td></tr>
+                </table>
+                <table style='margin-bottom:5px;'>
+    <tr class='incremental' id='4'>
+        <td class='name1'  width='45%' ><a href='javascript:void(0);' onclick='switchOpenCloseIcon(4); return false' data-toggle='collapse' data-target='#collapseme4' onmouseover='twentyfifty.startGroupDemo([41, 42, 43]); return true;' onmouseout='twentyfifty.stopGroupDemo([41, 42, 43]);return true;'>Industry</a></td>
+       
+        
+        <td class='choice1' width='35%'>
+            <input class="range_design" id="indu_range" type="range" min="1" max="4" value="2">
+         </td>
+        <td width='10%' id='dd-4' align='center'><span class="indu_val">2</span><a href='javascript:void(0);' onclick='switchOpenCloseIcon(4); return false' data-toggle='collapse' data-target='#collapseme4'><img id='m-4' width='15px' src='/assets/images/open.png'></td></tr></table>
+                <table class='collapse out' id='collapseme4'>
+                    <tr class='incremental' id='r41'>
+                    
+                    <td class='name' cellpadding='10'><a href='/assets/onepage/new/6/Energy Intensity of Industry.pdf' target='_new' title='Industrial Output is 35 Million tons of production in 2015 for 7 industrial sectors considered.' onmouseover='twentyfifty.startDemo(41); return true;' onmouseout='twentyfifty.stopDemo(41);return true;'>Energy Intensity of Industry </a><a href='/assets/onepage/new/6/Energy Intensity of Industry.pdf' target='_new' onmouseover='twentyfifty.startDemo(41); return true;' onmouseout='twentyfifty.stopDemo(41);return true;'><img height='13px' width='13px'  src='/assets/images/get_info.png'></a></td>
+                    
+                    
+                    <td class='choice'><a href='#' data-choicenumber='41' data-choicelevel='1' id='c41l1' title='Assumes poor improvement in industrial efficiency by 3-18% up to 2050.' class='choiceLink' >1</a></td>
+                    
+                    <td class='choice'><a href='#' data-choicenumber='41' data-choicelevel='2' id='c41l2' title='Assumes a gradual enhancement of penetration of EE in Industry,  Industrial efficiency improves by 10-20% up to 2050' class='choiceLink' >2</a></td>
+                    
+                    <td class='choice'><a href='#' data-choicenumber='41' data-choicelevel='3' id='c41l3' title='Assumes the implementation of best available technology in each sector improving the efficiency level by 20-30% in 2050' class='choiceLink' >3</a></td>
+                    
+                    <td class='choice'><a href='#' data-choicenumber='41' data-choicelevel='4' id='c41l4' title='Assumes the maximum possible improvement that can be achieved in the industry sector, the efficiency level of industries improves by 30-45% in 2050' class='choiceLink' >4</a></td>
+                    
+                    <td class='choice' id='d41'></td></tr>
+                    
+                    
+                    <tr class='incremental' id='r42'>
+                    <td class='name' cellpadding='10'><a title="Choose a fuel saving technology for cement sector." href='/assets/onepage/new/6/FuelSwitchingChoicesCement.pdf' target='_new'  onmouseover='twentyfifty.startDemo(42); return true;' onmouseout='twentyfifty.stopDemo(42);return true;'>Fuel Switching Choices – Cement  </a><a href='/assets/onepage/new/6/FuelSwitchingChoicesCement.pdf' target='_new' onmouseover='twentyfifty.startDemo(42); return true;' onmouseout='twentyfifty.stopDemo(42);return true;'><img height='13px' width='13px'  src='/assets/images/get_info.png'></a></td>
+                    
+                  
+                    
+                    <td class='choice'><a href='#' data-choicenumber='42' data-choicelevel='1' id='c42l1' title='Default technology options' class='choiceLink' >A</a></td>
+                    
+                    <td class='choice'><a href='#' data-choicenumber='42' data-choicelevel='2' id='c42l2' title='Increased use of waste Heat Recovery' class='choiceLink' >B</a></td>
+                    
+                    <td class='choice'><a href='#' data-choicenumber='42' data-choicelevel='3' id='c42l3' title='Increased use of Electricity from the Grid.' class='choiceLink' >C</a></td>
+                    
+                    <td class='choice'><a href='#' data-choicenumber='42' data-choicelevel='4' id='c42l4' title='Increased use of Alternate Fuels and Raw Materials' class='choiceLink' >D</a></td>
+                    
+                    <td class='choice' id='d42'></td></tr>
+                    
+                    
+                    <tr  class='incremental' id='r43'>
+                    
+                    <td  class='name' cellpadding='10'><a href='/assets/onepage/new/6/FuelSwitchingChoicesIronandSteel.pdf' target='_new' title='Choose a fuel saving technology for Iron and Steel sector' onmouseover='twentyfifty.startDemo(43); return true;' onmouseout='twentyfifty.stopDemo(43);return true;'>Fuel Switching Choices – Iron and Steel <img height='13px' width='13px'  src='/assets/images/get_info.png'></a></td>
+                    
+                   <td class='choice'><a href='#' data-choicenumber='43' data-choicelevel='1' id='c43l1' title='Default- maximum use of solid fuel.' class='choiceLink' >A</a></td>
+                   
+                   <td class='choice'><a href='#' data-choicenumber='43' data-choicelevel='2' id='c43l2' title='Switch to Electric Furnace' class='choiceLink' >B</a></td>
+                   
+                   <td class='choice'><a href='#' data-choicenumber='43' data-choicelevel='3' id='c43l3' title='Switch to more Gas based Direct Reduced Iron' class='choiceLink' >C</a></td>
+                   
+                   <td class='choice'><a href='#' data-choicenumber='43' data-choicelevel='4' id='c43l4' title='Increased use of Grid electricity.' class='choiceLink' >D</a></td>
+                   
+                   <td class='choice'><a href='#' data-choicenumber='43' data-choicelevel='5' id='c43l5' title='Increased use of Scrap' class='choiceLink' >E</a></td>
+                   
+                   <td class='choice' id='d43'></td></tr>
+                    <tr height='10'><td></td></tr>
+                </table>
+                
+                
+                <table style='margin-bottom:5px;'>
+    <tr class='incremental' id='5'>
+        <td class='name1' width='45%'><a href='javascript:void(0);' onclick='switchOpenCloseIcon(5); return false' data-toggle='collapse' data-target='#collapseme5' onmouseover='twentyfifty.startGroupDemo([46, 47]); return true;' onmouseout='twentyfifty.stopGroupDemo([46, 47]);return true;'>Agriculture</a></td>
+
+        <td class='choice1' width='35%'>
+            <input class="range_design" id="agri_range" type="range" min="1" max="4" value="2">
+         </td>
+         
+         <td width='10%' id='dd-5' align='center'><span class="agri_val">2</span><a href='javascript:void(0);' onclick='switchOpenCloseIcon(5); return false' data-toggle='collapse' data-target='#collapseme5'><img id='m-5' width='15px' src='/assets/images/open.png'></td></tr></table>
+                            
+                 <table class='collapse out' id='collapseme5'>
+                    <tr class='incremental' id='r46'>
+                    <td class='name' cellpadding='10'><a href='/assets/onepage/new/6/Energy Demand for Pumps and Tractors.pdf' target='_new' title='The demand for diesel by tractors in 2015 was 8.4 TWh.' onmouseover='twentyfifty.startDemo(46); return true;' onmouseout='twentyfifty.stopDemo(46);return true;'>Energy Demand for Pumps and Tractors</a><a href='/assets/onepage/new/6/Energy Demand for Pumps and Tractors.pdf' target='_new' onmouseover='twentyfifty.startDemo(46); return true;' onmouseout='twentyfifty.stopDemo(46);return true;'><img height='13px' width='13px'  src='/assets/images/get_info.png'></a></td>
+                    
+                    <td class='choice'><a href='#' data-choicenumber='46' data-choicelevel='1' id='c46l1' title='No improvement in fuel efficiency of tractors. The demand for diesel rises to 14 TWh in 2025 and remains constant thereafter.' class='choiceLink' >1</a></td>
+                    
+                    <td class='choice'><a href='#' data-choicenumber='46' data-choicelevel='2' id='c46l2' title='Fuel efficiency improves in this scenario resulting in diesel demand of 12.7 TWh in 2050.' class='choiceLink' >2</a></td>
+                    
+                    <td class='choice'><a href='#' data-choicenumber='46' data-choicelevel='3' id='c46l3' title='Fuel efficiency further improves in this scenario. The demand for diesel reaches 11.8 TWh in 2040 and remains constant. ' class='choiceLink' >3</a></td>
+                    
+                    <td class='choice'><a href='#' data-choicenumber='46' data-choicelevel='4' id='c46l4' title='Fuel efficiency of tractors improves significantly leading to diesel demand at 11 TWh in 2040 and remains constant thereafter..' class='choiceLink' >4</a></td>
+                    
+                    <td class='choice' id='d46'></td></tr>
+                    
+                    
+                    <tr class='incremental' id='r47'>
+                    <td class='name' cellpadding='10'><a href='/assets/onepage/new/6/Fuel Split for Pumps.pdf' target='_new' title='Diesel meets 5% and electricity meets 95% of  irrigation demand in 2015.' onmouseover='twentyfifty.startDemo(47); return true;' onmouseout='twentyfifty.stopDemo(47);return true;'>Fuel Split for Pumps</a><a href='/assets/onepage/new/6/Fuel Split for Pumps.pdf' target='_new' onmouseover='twentyfifty.startDemo(47); return true;' onmouseout='twentyfifty.stopDemo(47);return true;'><img height='13px' width='13px'  src='/assets/images/get_info.png'></a></td>
+                    
+                    <td class='choice'><a href='#' data-choicenumber='47' data-choicelevel='1' id='c47l1' title='Assumes pessimistic scenario wherein Diesel meets 5% and electricity meets 85% and solar meet 10%of the total irrigation demand (2050).' class='choiceLink' >1</a></td>
+                    
+                    <td class='choice'><a href='#' data-choicenumber='47' data-choicelevel='2' id='c47l2' title='Assumes an efficient scenario wherein diesel meets 3%, electricity meets 72% while Solar penetration reaches 25% in 2050.' class='choiceLink' >2</a></td>
+                    
+                    <td class='choice'><a href='#' data-choicenumber='47' data-choicelevel='3' id='c47l3' title='An aggressive renewable rich scenario wherein the share of solar rises to 30% and electricity share becomes 70% 2050. Diesel pumps have been phased out.' class='choiceLink' >3</a></td>
+                    
+                    <td class='choice'><a href='#' data-choicenumber='47' data-choicelevel='4' id='c47l4' title='A highly optimistic scenario. Solar meets 50% of the demand and electricity meets 50% by 2050. Diesel pumps have been phased out.' class='choiceLink' >4</a></td><td class='choice' id='d47'></td></tr>
+                    <tr height='10'><td></td></tr>
+                </table>
+               <!-- <table style='margin-bottom:5px;'>
+    <tr class='incremental' id='6'>
+        <td class='name1' width='45%'><a href='javascript:void(0);' onclick='switchOpenCloseIcon(6); return false' data-toggle='collapse' data-target='#collapseme6' onmouseover='twentyfifty.startGroupDemo([48]); return true;' onmouseout='twentyfifty.stopGroupDemo([48]);return true;'>Telecom</a></td>
+        <td class='choice1' width='35%'>
+             <input class="range_design" id="tel_range" type="range" min="0" max="4" value="4">
+        </td>
+        <td width='10%' id='dd-6' align='center'><span class="tel_val">4</span><a href='javascript:void(0);' onclick='switchOpenCloseIcon(6); return false' data-toggle='collapse' data-target='#collapseme6'><img id='m-6' width='15px' src='/assets/images/open.png'></td></tr></table>-->
+        
+                <table class='collapse out' id='collapseme6'>
+                    <tr class='incremental' id='r48'><td class='name' cellpadding='10'><a href='/assets/onepage/Telecom_One-pager.pdf' target='_new' title1='The demand for diesel was 5.9 MT in 2012. 100% demand was met by diesel in urban and rural areas in 2012.' onmouseover='twentyfifty.startDemo(48); return true;' onmouseout='twentyfifty.stopDemo(48);return true;'>Shift to Electricity from Diesel for Telecom Towers</a></td><td width='20px'><a href='/assets/onepage/Telecom_One-pager.pdf' target='_new' onmouseover='twentyfifty.startDemo(48); return true;' onmouseout='twentyfifty.stopDemo(48);return true;'><img height='13px' width='13px'  src='/assets/images/get_info.png'></a></td><td class='choice'><a href='#' data-choicenumber='48' data-choicelevel='1' id='c48l1' title1='Assumes high level of diesel dependence in telecom towers. Only 10% towers in urban and rural areas run on solar energy. Diesel demand rises to 19.3 MT by 2047.' class='choiceLink' >1</a></td><td class='choice'><a href='#' data-choicenumber='48' data-choicelevel='2' id='c48l2' title1='Assumes that 40% of the towers in urban and rural areas run on solar energy. The demand for diesel subsides in comparison with level 1 to 11.6 MT in 2047.' class='choiceLink' >2</a></td><td class='choice'><a href='#' data-choicenumber='48' data-choicelevel='3' id='c48l3' title1='An aggressive solarisation of telecom towers take place. 70% of the urban and 50% of the rural towers are solar powered. The demand for diesel becomes 4.5 MT in 2047.' class='choiceLink' >3</a></td><td class='choice'><a href='#' data-choicenumber='48' data-choicelevel='4' id='c48l4' title1='Penetration of towers powered by solar energy rises to 75% and 50% in urban and rural areas respectively. The demand for diesel also reduces greatly to 1 MT in 2047.' class='choiceLink' >4</a></td><td class='choice' id='d48'></td></tr>
+                </table>
+                </table>
+            </div>
+            
+             <div id='other' class="box_show_range_div col-md-12">
+                <h2>Supply - Conventional Energy</h2>
+                <table>
+                <!-- - structure.choices[0..37].each do |choice| -->
+                <!-- - [21,0, 22,1,2, 23,  3,4].each do |choice| -->
+                <table style='margin-bottom:5px;'>
+    <tr class='incremental' id='14'>
+        <td class='name1' width='45%'><a href='javascript:void(0);' onclick='switchOpenCloseIcon(14); return false' data-toggle='collapse' data-target='#collapseme14' onmouseover='twentyfifty.startGroupDemo([23, 0]); return true;' onmouseout='twentyfifty.stopGroupDemo([23, 0]);return true;'>Gas power station</a></td>
+        <td class="choice1" width="35%">
+                                <input class="range_design" id="gas_range" type="range" min="1" max="4" value="2">
+                            </td>
+       
+        <td width='10%' id='dd-14' align='center'><span class="gas_val">2</span><a href='javascript:void(0);' onclick='switchOpenCloseIcon(14); return false' data-toggle='collapse' data-target='#collapseme14'><img id='m-14' width='15px' src='/assets/images/open.png'></td></tr></table>
+        
+                <table class='collapse out' id='collapseme14'>
+                    <!--<tr class='incremental' id='r23'>
+                        <td class='name' cellpadding='10'><a href='/assets/onepage/Domestic Gas Production.pdf' target='_new' title='The Domestic Gas Production in 2012 was 47.5 BCM' onmouseover='twentyfifty.startDemo(23); return true;' onmouseout='twentyfifty.stopDemo(23);return true;'>Domestic Gas Production</a></td>
+                        <td width='20px'><a href='/assets/onepage/Domestic Gas Production.pdf' target='_new' onmouseover='twentyfifty.startDemo(23); return true;' onmouseout='twentyfifty.stopDemo(23);return true;'><img height='13px' width='13px'  src='/assets/images/get_info.png'></a></td>
+                        <td class='choice'><a href='#' data-choicenumber='23' data-choicelevel='1' id='c23l1' title='Assumes production only from the current discoveries of conventional gas and CBM – production rises to 82 BCM (2047).' class='choiceLink'>1</a></td>
+                        <td class='choice'><a href='#' data-choicenumber='23' data-choicelevel='2' id='c23l2' title='Assumes production from current discoveries; additionally moderate development of new CBM (peak production of 5 BCM in 2032). Total gas production rises to 127 BCM (2047).' class='choiceLink'>2</a></td>
+                        <td class='choice'><a href='#' data-choicenumber='23' data-choicelevel='3' id='c23l3' title='Aggressive growth in gas production from conventional/CBM sources. Shale gas production also begins early. Gas production rises to 171 BCM (2047).' class='choiceLink'>3</a></td>
+                        <td class='choice'><a href='#' data-choicenumber='23' data-choicelevel='4' id='c23l4' title='Heroic scenario for domestic gas. Assumes a highly favourable upstream regime wherein gas production rises from all sources to 224 BCM (2047).' class='choiceLink'>4</a></td>
+                        <td class='choice' id='d23'></td>
+                    </tr>-->
+                    
+                    <tr class='incremental' id='r0'>
+                        <td class='name' cellpadding='10'><a href='/assets/onepage/new/6/Gas Power Stations.pdf' target='_new' title='The cumulative capacity of Gas Power Stations was 7.5 GW  in 2015.' onmouseover='twentyfifty.startDemo(0); return true;' onmouseout='twentyfifty.stopDemo(0);return true;'>Gas Power Stations</a><a href='/assets/onepage/new/6/Gas Power Stations.pdf' target='_new' onmouseover='twentyfifty.startDemo(0); return true;' onmouseout='twentyfifty.stopDemo(0);return true;'><img height='13px' width='13px'  src='/assets/images/get_info.png'></a></td>
+                        
+                        <td class='choice'><a href='#' data-choicenumber='0' data-choicelevel='1' id='c0l1' title='Assumes no new capacity gets added. Cumulative capacity remains at 7.5 GW in 2050.' class='choiceLink'>1</a></td>
+                        
+                        <td class='choice'><a href='#' data-choicenumber='0' data-choicelevel='2' id='c0l2' title='A favorable scenario as new gas power projects gets added. Gas power stations capacity reaches 11.8 GW in 2050.' class='choiceLink'>2</a></td>
+                        
+                        <td class='choice'><a href='#' data-choicenumber='0' data-choicelevel='3' id='c0l3' title='Assumes a higher  growth in gas generation. Gas power stations capacity reaches 16.4 GW in 2050.' class='choiceLink'>3</a></td>
+                        
+                        <td class='choice'><a href='#' data-choicenumber='0' data-choicelevel='4' id='c0l4' title='A highly optimistic scenario where fuel avaialblity might not be an issue. Cumulative capacity of gas based power stations become 21.5 GW in 2050. ' class='choiceLink'>4</a></td>
+                        <td class='choice' id='d0'></td>
+                    </tr>
+                    <tr height='10'>
+                        <td></td>
+                    </tr>   
+                </table>
+                
+                <table style='margin-bottom:5px;'>
+                    <tr class='incremental' id='15'>
+                        <td class='name1' width="45%">
+                            <a href='javascript:void(0);' onclick='switchOpenCloseIcon(15); return false' data-toggle='collapse' data-target='#collapseme15' onmouseover='twentyfifty.startGroupDemo([24, 1, 2]); return true;' onmouseout='twentyfifty.stopGroupDemo([24, 1, 2]);return true;'>Coal power station</a>
+                        </td>
+                        <td class="choice1" width="35%">
+                                <input class="range_design" id="coal_range" type="range" min="1" max="4" value="2">
+                            </td>
+                        
+                   <td width='10%' id='dd-15' align='center'><span class="coal_val">2</span><a href='javascript:void(0);' onclick='switchOpenCloseIcon(15); return false' data-toggle='collapse' data-target='#collapseme15'><img id='m-15' width='15px' src='/assets/images/open.png'></td></tr></table>
+        
+        
+                <table class='collapse out' id='collapseme15'>
+                    <!--<tr class='incremental' id='r24'>
+                        <td class='name' cellpadding='10'><a href='/assets/onepage/Coal Production.pdf' target='_new' title='The Domestic Coal Production was 582 MTPA in 2012.' onmouseover='twentyfifty.startDemo(24); return true;' onmouseout='twentyfifty.stopDemo(24);return true;'>Domestic Coal Production</a></td>
+                        <td width='20px'><a href='/assets/onepage/Coal Production.pdf' target='_new' onmouseover='twentyfifty.startDemo(24); return true;' onmouseout='twentyfifty.stopDemo(24);return true;'><img height='13px' width='13px'  src='/assets/images/get_info.png'></a></td>
+                        <td class='choice'><a href='#' data-choicenumber='24' data-choicelevel='1' id='c24l1' title='Assumes production only from currently operating and ongoing projects. Coal production dips to 540 MTPA (2047) due to decline in production from current mines.' class='choiceLink'>1</a></td>
+                        <td class='choice'><a href='#' data-choicenumber='24' data-choicelevel='2' id='c24l2' title='Assumes a favourable coal production scenario. Coal production rises to 1157 MTPA (2047).' class='choiceLink'>2</a></td>
+                        <td class='choice'><a href='#' data-choicenumber='24' data-choicelevel='3' id='c24l3' title=' Assumes a yet more favourable scenario with Proven coal reserves growing at 1.3% p.a. Coal production rises to 1400 MTPA (2047).' class='choiceLink'>3</a></td>
+                        <td class='choice'><a href='#' data-choicenumber='24' data-choicelevel='4' id='c24l4' title='An un-restricted growth in coal production takes place. Proven coal reserves to grow at 1.5% p.a. Coal production is about 1602 MTPA (2047).' class='choiceLink'>4</a></td>
+                        <td class='choice' id='d24'></td>
+                    </tr>-->
+                    <tr class='incremental' id='r1'>
+                        <td class='name' cellpadding='10'><a href='/assets/onepage/new/6/Coal Power Stations.pdf' target='_new' title='The cumulative capacity of Coal Power Stations was 16 GW in 2015.' onmouseover='twentyfifty.startDemo(1); return true;' onmouseout='twentyfifty.stopDemo(1);return true;'>Coal Power Stations</a><a href='/assets/onepage/new/6/Coal Power Stations.pdf' target='_new' onmouseover='twentyfifty.startDemo(1); return true;' onmouseout='twentyfifty.stopDemo(1);return true;'><img height='13px' width='13px'  src='/assets/images/get_info.png'></a></td>
+                       
+                       
+                        <td class='choice'><a href='#' data-choicenumber='1' data-choicelevel='1' id='c1l1' title='No new coal capacity is added after 2020. Cumulative capacity remains at 16 GW in 2050.' class='choiceLink'>1</a></td>
+                        
+                        <td class='choice'><a href='#' data-choicenumber='1' data-choicelevel='2' id='c1l2' title='Assumes that coal based generation might receives support. Cumulative capacity becomes 24 GW in 2050..' class='choiceLink'>2</a></td>
+                        
+                        <td class='choice'><a href='#' data-choicenumber='1' data-choicelevel='3' id='c1l3' title='A slight high growth scenario wherein Capacity addition grows rapidly and cumulative capacity reaches 28 GW in  2050.' class='choiceLink'>3</a></td>
+                        
+                        <td class='choice'><a href='#' data-choicenumber='1' data-choicelevel='4' id='c1l4' title='A highly optimistic scenario where cumulative capacity becomes 31 GW in 2050.' class='choiceLink'>4</a></td>
+                        <td class='choice' id='d1'></td>
+                    </tr>
+                    <tr class='incremental' id='r2'>
+                        <td class='name' cellpadding='10'><a href='/assets/onepage/new/6/Efficiency of Coal Power Stations.pdf' target='_new' title='Percentage of  sub-critical, super-critical, ultra super critical and IGGG is (30 %, 70%, 0%, 0%) in 2015' onmouseover='twentyfifty.startDemo(2); return true;' onmouseout='twentyfifty.stopDemo(2);return true;'>Efficiency of Coal Power Stations</a><a href='/assets/onepage/new/6/Efficiency of Coal Power Stations.pdf' target='_new' onmouseover='twentyfifty.startDemo(2); return true;' onmouseout='twentyfifty.stopDemo(2);return true;'><img height='13px' width='13px'  src='/assets/images/get_info.png'></a></td>
+                       
+                        <td class='choice'><a href='#' data-choicenumber='2' data-choicelevel='1' id='c2l1' title='Percentage of  sub-critical, super-critical, ultra super critical and IGGG is (0 %, 40%, 30%, 30%) by 2050' class='choiceLink'>1</a></td>
+                        
+                        <td class='choice'><a href='#' data-choicenumber='2' data-choicelevel='2' id='c2l2' title='Percentage of  sub-critical, super-critical, ultra super critical and IGGG is (0 %, 10%, 40%, 50%) by 2050' class='choiceLink'>2</a></td>
+                        
+                        <td class='choice'><a href='#' data-choicenumber='2' data-choicelevel='3' id='c2l3' title='Percentage of  sub-critical, super-critical, ultra super critical and IGGG is (0 %, 5%, 30%, 65%) by 2050' class='choiceLink'>3</a></td>
+                        
+                        <td class='choice'><a href='#' data-choicenumber='2' data-choicelevel='4' id='c2l4' title='Percentage of  sub-critical, super-critical, ultra super critical and IGGG is (0 %, 0%, 20%, 80%) by 2050' class='choiceLink'>4</a></td>
+                        <td class='choice' id='d2'></td>
+                    </tr>
+                    <tr height='10'>
+                        <td></td>
+                    </tr>
+                </table>
+                
+              <!-- <table style='margin-bottom:5px;'>
+                <tr class='incremental' id='16'>
+                    <td class='name1' width="45%"><a href='javascript:void(0);' onclick='switchOpenCloseIcon(16); return false' data-toggle='collapse' data-target='#collapseme16' onmouseover='twentyfifty.startGroupDemo([25]); return true;' onmouseout='twentyfifty.stopGroupDemo([25]);return true;'>Oil</a></td>
+                     <td class="choice1" width="35%">
+                                <input class="range_design" id="oil_range" type="range" min="0" max="4" value="4">
+                            </td>
+       
+                <td width='10%' id='dd-16' align='center'><span class="oil_val">4</span><a href='javascript:void(0);' onclick='switchOpenCloseIcon(16); return false' data-toggle='collapse' data-target='#collapseme16'><img id='m-16' width='15px' src='/assets/images/open.png'></td></tr></table>-->
+        
+        
+                <table class='collapse out' id='collapseme16'>
+                   <!-- <tr class='incremental' id='r25'><td class='name' cellpadding='10'><a href='/assets/onepage/Domestic Oil Production.pdf' target='_new' title='The Domestic Oil Production was 38 MMT in 2012.' onmouseover='twentyfifty.startDemo(25); return true;' onmouseout='twentyfifty.stopDemo(25);return true;'>Domestic Oil Production</a></td><td width='20px'><a href='/assets/onepage/Domestic Oil Production.pdf' target='_new' onmouseover='twentyfifty.startDemo(25); return true;' onmouseout='twentyfifty.stopDemo(25);return true;'><img height='13px' width='13px'  src='/assets/images/get_info.png'></a></td><td class='choice'><a href='#' data-choicenumber='25' data-choicelevel='1' id='c25l1' title='Poor domestic oil production scenario. Assumes no improvement in R/F and no new fields come into production, declining oil production to 34.5 MMT in 2047.' class='choiceLink' >1</a></td><td class='choice'><a href='#' data-choicenumber='25' data-choicelevel='2' id='c25l2' title='A favourable outlook for domestic oil production, raising it to 59 MMT in 2047.' class='choiceLink' >2</a></td><td class='choice'><a href='#' data-choicenumber='25' data-choicelevel='3' id='c25l3' title='An aggressive scenario for domestic oil production. Production rises to 68 MMT in 2047.' class='choiceLink' >3</a></td><td class='choice'><a href='#' data-choicenumber='25' data-choicelevel='4' id='c25l4' title='Production from multiple domestic sources raises oil production to 78 MMT in 2047.' class='choiceLink' >4</a></td><td class='choice' id='d25'></td></tr>
+                    <tr height='10'><td></td></tr>-->
+                </table>
+                <table style='margin-bottom:5px;'>
+            <tr class='incremental' id='17'>
+                <td class='name1' width="45%"><a href='javascript:void(0);' onclick='switchOpenCloseIcon(17); return false' data-toggle='collapse' data-target='#collapseme17' onmouseover='twentyfifty.startGroupDemo([4, 5]); return true;' onmouseout='twentyfifty.stopGroupDemo([4, 5]);return true;'>Carbon Capture and Storage</a>
+            </td>
+            <td class="choice1" width="35%">
+                                <input class="range_design" id="carbon_range" type="range" min="1" max="4" value="2">
+                            </td>
+            
+        <td width='10%' id='dd-17' align='center'><span class="carbon_val">2</span><a href='javascript:void(0);' onclick='switchOpenCloseIcon(17); return false' data-toggle='collapse' data-target='#collapseme17'><img id='m-17' width='15px' src='/assets/images/open.png'></td></tr></table>
+        
+                <table class='collapse out' id='collapseme17'>
+                
+                    <tr class='incremental' id='r4'>
+                    <td class='name' cellpadding='10'><a title="The generation from CCS Power Stations was zero in 2015." href='/assets/onepage/new/6/CCS Power Stations.pdf' target='_new' onmouseover='twentyfifty.startDemo(4); return true;' onmouseout='twentyfifty.stopDemo(4);return true;'>CCS Power Stations </a><a href='/assets/onepage/new/6/CCS Power Stations.pdf' target='_new' onmouseover='twentyfifty.startDemo(4); return true;' onmouseout='twentyfifty.stopDemo(4);return true;'><img height='13px' width='13px'  src='/assets/images/get_info.png'></a></td>
+                    
+                    
+                    <td class='choice'><a href='#' data-choicenumber='4' data-choicelevel='1' id='c4l1' title='No CCS power plant is commissioned' class='choiceLink' >1</a></td>
+                    
+                    <td class='choice'><a href='#' data-choicenumber='4' data-choicelevel='2' id='c4l2' title=' Early adoption of CCS. Its capacity rises to 650 MW and generation to 3.5 TWh till 2050.' class='choiceLink' >2</a></td>
+                    
+                    <td class='choice'><a href='#' data-choicenumber='4' data-choicelevel='3' id='c4l3' title='A high adoption of this technology and CCS-equipped capacity and generation grow to 3.3 GW and 18 TWh by 2050 respectively.' class='choiceLink' >3</a></td>
+                    
+                    <td class='choice'><a href='#' data-choicenumber='4' data-choicelevel='4' id='c4l4' title='More generation plants with CCS technology get deployed, increasing to 6 GW and 32 TWh by 2050.' class='choiceLink' >4</a></td>
+                    
+                    <td class='choice' id='d4'></td></tr>
+                    
+                    
+                    <tr class='incremental' id='r5'>
+                    <td class='name' cellpadding='10'><a title="Since there were no CCS Power Plants, the fuel mix scenario could not be captured." href='/assets/onepage/new/6/CCS Fuel Mix.pdf' target='_new'  onmouseover='twentyfifty.startDemo(5); return true;' onmouseout='twentyfifty.stopDemo(5);return true;'>CCS Fuel Mix </a><a href='/assets/onepage/new/6/CCS Fuel Mix.pdf' target='_new' onmouseover='twentyfifty.startDemo(5); return true;' onmouseout='twentyfifty.stopDemo(5);return true;'><img height='13px' width='13px'  src='/assets/images/get_info.png'></a></td>
+                    
+                    <td class='choice'><a href='#' data-choicenumber='5' data-choicelevel='1' id='c5l1' title='CCS technology is completely based on coal and gas is not utilized for CCS at this stage.' class='choiceLink' >A</a></td>
+                    
+                    <td class='choice'><a href='#' data-choicenumber='5' data-choicelevel='2' id='c5l2' title='Gas based CCS technology makes debut. The fuel split for coal and gas is 95% and 5%, respectively by 2050.' class='choiceLink' >B</a></td>
+                    
+                    <td class='choice'><a href='#' data-choicenumber='5' data-choicelevel='3' id='c5l3' title='Gas based CCS technology has begun but in a slow measure. The fuel split for coal and gas is 95% and 5%, respectively by 2050.' class='choiceLink' >C</a></td>
+                    
+                    <td class='choice'><a href='#' data-choicenumber='5' data-choicelevel='4' id='c5l4' title='The fuel split for coal and gas is 85% and 15%, respectively by 2050.' class='choiceLink' >D</a></td>
+                    
+                    <td class='choice' id='d5'></td></tr>
+                    <tr height='10'><td></td></tr>
+                </table>
+                </table>
+            </div>
+           
+            </div>
+               
+               
+          
+                
+            <div class="col-md-6 col-xs-12 right_remove level_num_span">
+                 <div class='tour_4 box_show_range_div col-md-12' id='supply'>
+                <h2>Supply - Renewable and Clean Energy</h2>
+                <table>
+                <!-- - [7,8,12,13, 9,10, 5,  6,11,  15,16,17,18,  19, 20].each do |choice| -->
+                    <table style='margin-bottom:5px;'>
+                        <tr class='incremental' id='7'>
+                            <td class='name1' width='45%'><a href='javascript:void(0);' onclick='switchOpenCloseIcon(7); return false' data-toggle='collapse' data-target='#collapseme7' onmouseover='twentyfifty.startGroupDemo([8, 9, 13, 14]); return true;' onmouseout='twentyfifty.stopGroupDemo([8, 9, 13, 14]);return true;'>Solar</a></td>
+                            <td class='choice1' width='35%'>
+                                <input class="range_design" id="solar_range" type="range" min="1" max="4" value="2">
+                            </td>
+                           
+                            <td width='10%' id='dd-7' align='center'><span class="solar_val">2</span><a href='javascript:void(0);' onclick='switchOpenCloseIcon(7); return false' data-toggle='collapse' data-target='#collapseme7'><img id='m-7' width='15px' src='/assets/images/open.png'></td></tr></table>
+                <table class='collapse out' id='collapseme7'>
+                    <tr class='incremental' id='r8'>
+                    
+                    <td class='name' cellpadding='10'><a href='/assets/onepage/new/6/Solar Photovoltaic.pdf' target='_new' title='The capacity of Solar PV in 2015 was  1 GW' onmouseover='twentyfifty.startDemo(8); return true;' onmouseout='twentyfifty.stopDemo(8);return true;'>Solar Photovoltaic </a><a href='/assets/onepage/new/6/Solar Photovoltaic.pdf' target='_new' onmouseover='twentyfifty.startDemo(8); return true;' onmouseout='twentyfifty.stopDemo(8);return true;'><img height='13px' width='13px'  src='/assets/images/get_info.png'></a></td>
+                    
+                    <td class='choice'><a href='#' data-choicenumber='8' data-choicelevel='1' id='c8l1' title='Assumes slow capacity addition. Capacity rises to 12.5 GW by 2050.' class='choiceLink' >1</a></td>
+                    
+                    <td class='choice'><a href='#' data-choicenumber='8' data-choicelevel='2' id='c8l2' title='A favorable scenario for solar. Plans will be achieved and capcity will rise to 18 GW  by 2050' class='choiceLink' >2</a></td>
+                    
+                    <td class='choice'><a href='#' data-choicenumber='8' data-choicelevel='3' id='c8l3' title='A better scenario for solar. The capacity rises to 25 GW by 2050.' class='choiceLink' >3</a></td>
+                    
+                    <td class='choice'><a href='#' data-choicenumber='8' data-choicelevel='4' id='c8l4' title='A heroic scenario for solar where there might not be any barrier to the growth of solar PV. Solar capacity rises to full potential of 36 GW by 2040.' class='choiceLink' >4</a></td>
+                    
+                    <td class='choice' id='d8'></td></tr>
+                    
+                    
+                    <tr style="display:none" class='incremental' id='r9'>
+                    
+                    <td  class='name' cellpadding='10'><a href='/assets/onepage/Solar CSP.pdf' target='_new' title1='The capacity of Solar CSP was 0 GW in 2012.' onmouseover='twentyfifty.startDemo(9); return true;' onmouseout='twentyfifty.stopDemo(9);return true;'>Concentrated Solar Power </a></td><td width='20px'><a href='/assets/onepage/Solar CSP.pdf' target='_new' onmouseover='twentyfifty.startDemo(9); return true;' onmouseout='twentyfifty.stopDemo(9);return true;'><img height='13px' width='13px'  src='/assets/images/get_info.png'></a></td><td class='choice'><a href='#' data-choicenumber='9' data-choicelevel='1' id='c9l1' title1='A dismal scenario assumed. Due to high costs, only 1 GW to be operational in the next 5 years. Generation of 9.5 GW by 2047.' class='choiceLink' >1</a></td><td class='choice'><a href='#' data-choicenumber='9' data-choicelevel='2' id='c9l2' title1='Assumes a slow but consistent growth in capacity addition of CSP. Capacity reaches to 46 GW (2047).' class='choiceLink' >2</a></td><td class='choice'><a href='#' data-choicenumber='9' data-choicelevel='3' id='c9l3' title1='Assumes that CSP costs come down significantly and that there are no limitations on plant size. Capacity reaches 90 GW (2047).' class='choiceLink' >3</a></td><td class='choice'><a href='#' data-choicenumber='9' data-choicelevel='4' id='c9l4' title='Costs of solar system and storage fall as higher temperature technologies are introduced. Capacity reaches 187 GW (2047).' class='choiceLink' >4</a></td><td class='choice' id='d9'></td></tr>
+                    
+                    
+                    <tr class='incremental' id='r13'>
+                    
+                    <td class='name' cellpadding='10'><a href='/assets/onepage/new/6/Distribted Solar PV( Solar Rooftop).pdf' target='_new' title='The capacity of Distributed Solar PV was zero in 2015.' onmouseover='twentyfifty.startDemo(13); return true;' onmouseout='twentyfifty.stopDemo(13);return true;'>Distribted Solar PV( Solar Rooftop)</a><a href='/assets/onepage/new/6/Distribted Solar PV( Solar Rooftop).pdf' target='_new' onmouseover='twentyfifty.startDemo(13); return true;' onmouseout='twentyfifty.stopDemo(13);return true;'><img height='13px' width='13px'  src='/assets/images/get_info.png'></a></td>
+                    
+                    <td class='choice'><a href='#' data-choicenumber='13' data-choicelevel='1' id='c13l1' title1='Assumes a low penetration rate resulting in total capacity of 4.4 GW by 2050.' class='choiceLink' >1</a></td>
+                    
+                    <td class='choice'><a href='#' data-choicenumber='13' data-choicelevel='2' id='c13l2' title1='The penetration rises with the total capacity reaching 7.5 GW by 2050.' class='choiceLink' >2</a></td>
+                    
+                    <td class='choice'><a href='#' data-choicenumber='13' data-choicelevel='3' id='c13l3' title1='An aggressive scenario with the penetration rate rising and resulting in total capacity of 10.5 GW by 2050..' class='choiceLink' >3</a></td>
+                    
+                    <td class='choice'><a href='#' data-choicenumber='13' data-choicelevel='4' id='c13l4' title1='All round development of this technology might take place, resulting in total capacity of 14 GW by 2050.' class='choiceLink' >4</a></td>
+                    
+                    <td class='choice' id='d13'></td></tr>
+                    
+                    
+                    <tr class='incremental' id='r14'>
+                    
+                    <td class='name' cellpadding='10'><a href='/assets/onepage/new/6/Solar Water Heaters.pdf' target='_new' title='The cumulative capacity of Solar Water Heaters was 0.1 GW in 2015.' onmouseover='twentyfifty.startDemo(14); return true;' onmouseout='twentyfifty.stopDemo(14);return true;'>Solar Water Heaters</a><a href='/assets/onepage/new/6/Solar Water Heaters.pdf' target='_new' onmouseover='twentyfifty.startDemo(14); return true;' onmouseout='twentyfifty.stopDemo(14);return true;'><img height='13px' width='13px'  src='/assets/images/get_info.png'></a></td>
+                    
+                    <td class='choice'><a href='#' data-choicenumber='14' data-choicelevel='1' id='c14l1' title='Assumes a low penetration rate, with total Solar Water Heater capacity reaching 0.4 GW (2050).' class='choiceLink' >1</a></td>
+                    
+                    <td class='choice'><a href='#' data-choicenumber='14' data-choicelevel='2' id='c14l2' title='A relatively higher penetration rate helps Solar Water Heater capacity reach 1.7 GW (2050).' class='choiceLink' >2</a></td>
+                    
+                    <td class='choice'><a href='#' data-choicenumber='14' data-choicelevel='3' id='c14l3' title='An aggressive growth takes place. Total Solar Water Heater capacity reaches 3.1W (2050).' class='choiceLink' >3</a></td>
+                    
+                    <td class='choice'><a href='#' data-choicenumber='14' data-choicelevel='4' id='c14l4' title='A highly favorable regime results in total Solar Water Heater capacity reach 5.8W (2050).' class='choiceLink' >4</a></td>
+                    
+                    <td class='choice' id='d14'></td></tr>
+                    <tr height='10'><td></td></tr>
+                </table>
+                        <table style='margin-bottom:5px;'>
+        <tr class='incremental' id='8'>
+            <td class='name1' width='45%'><a href='javascript:void(0);' onclick='switchOpenCloseIcon(8); return false' data-toggle='collapse' data-target='#collapseme8' onmouseover='twentyfifty.startGroupDemo([10, 11]); return true;' onmouseout='twentyfifty.stopGroupDemo([10, 11]);return true;'>Wind</a></td>
+             <td class='choice1' width='35%'>
+                 <input class="range_design" id="wind_range" type="range" min="1" max="4" value="2">
+             </td>
+       
+            <td width='10%px' id='dd-8' align='center'><span class="wind_val">2</span><a href='javascript:void(0);' onclick='switchOpenCloseIcon(8); return false' data-toggle='collapse' data-target='#collapseme8'><img id='m-8' width='15px' src='/assets/images/open.png'></td></tr></table>
+                
+             
+             
+                                <table class='collapse out' id='collapseme8'>
+                        <tr class='incremental' id='r10'>
+                            <td class='name' cellpadding='10'><a href='/assets/onepage/new/6/Onshore Wind.pdf' target='_new' title='TThe capacity of Onshore Wind was 3.5 GW in 2015.' onmouseover='twentyfifty.startDemo(10); return true;' onmouseout='twentyfifty.stopDemo(10);return true;'>Onshore Wind</a><a href='/assets/onepage/new/6/Onshore Wind.pdf' target='_new' onmouseover='twentyfifty.startDemo(10); return true;' onmouseout='twentyfifty.stopDemo(10);return true;'><img height='13px' width='13px'  src='/assets/images/get_info.png'></a></td>
+                           
+                           
+                            <td class='choice'><a href='#' data-choicenumber='10' data-choicelevel='1' id='c10l1' title='Assumes slow capacity addition. Capacity rises to 20 GW by 2050.' class='choiceLink'>1</a></td>
+                            
+                            <td class='choice'><a href='#' data-choicenumber='10' data-choicelevel='2' id='c10l2' title='A favorable environment supports growth and  capacity reaches 36.5 GW by 2050.' class='choiceLink'>2</a></td>
+                            
+                            <td class='choice'><a href='#' data-choicenumber='10' data-choicelevel='3' id='c10l3' title='Aggressive capacity addition, reaching  53 GW capacity by 2050..' class='choiceLink'>3</a></td>
+                            
+                            <td class='choice'><a href='#' data-choicenumber='10' data-choicelevel='4' id='c10l4' title='A heroic scenario where there might not be any barrier to the growth of onshore wind power. The capcity rises to 76 GW by 2050.' class='choiceLink'>4</a></td>
+                            
+                            <td class='choice' id='d10'></td>
+                        </tr>
+                       <tr class='incremental' id='r11'>
+                            <td class='name' cellpadding='10'><a href='/assets/onepage/new/6/Offshore Wind.pdf' target='_new' title='The capacity of Offshore Wind was zero in 2015.' onmouseover='twentyfifty.startDemo(11); return true;' onmouseout='twentyfifty.stopDemo(11);return true;'>Offshore Wind <img height='13px' width='13px'  src='/assets/images/get_info.png'></a></td>
+                            
+                            <td class='choice'><a href='#' data-choicenumber='11' data-choicelevel='1' id='c11l1' title='Assumes slow capacity addition. Capacity rises to 1.4 GW by 2050.' class='choiceLink'>1</a></td>
+                            
+                            <td class='choice'><a href='#' data-choicenumber='11' data-choicelevel='2' id='c11l2' title='A favorable environment supports growth and capacity reaches 7 GW by 2050.' class='choiceLink'>2</a></td>
+                            
+                            <td class='choice'><a href='#' data-choicenumber='11' data-choicelevel='3' id='c11l3' title='Aggressive capacity addition, reaching 22 GW capacity by 2050.' class='choiceLink'>3</a></td>
+                            
+                            <td class='choice'><a href='#' data-choicenumber='11' data-choicelevel='4' id='c11l4' title='A heroic scenario where there might not be any barrier to the growth of ofshore wind power. The capcity rises to 50 GW by 2050.' class='choiceLink'>4</a></td>
+                            
+                            
+                            <td class='choice' id='d11'></td>
+                        </tr>
+                        <tr height='10'>
+                            <td></td>
+                        </tr>
+                    </table>
+                <table style='margin-bottom:5px;'>
+    <tr class='incremental' id='9'>
+        <td class='name1' width='45%'><a href='javascript:void(0);' onclick='switchOpenCloseIcon(9); return false' data-toggle='collapse' data-target='#collapseme9' onmouseover='twentyfifty.startGroupDemo([6]); return true;' onmouseout='twentyfifty.stopGroupDemo([6]);return true;'>Nuclear</a></td>
+         <td class='choice1' width='35%'>
+                 <input class="range_design" id="nucl_range" type="range" min="1" max="4" value="2">
+             </td>
+        <td width='10%' id='dd-9' align='center'><span class="nucl_val">2</span><a href='javascript:void(0);' onclick='switchOpenCloseIcon(9); return false' data-toggle='collapse' data-target='#collapseme9'><img id='m-9' width='15px' src='/assets/images/open.png'></td></tr>
+ </table> 
+                <table class='collapse out' id='collapseme9'>
+                    <tr class='incremental' id='r6'>
+                    <td class='name' cellpadding='10'><a href='/assets/onepage/new/6/Nuclear Power Stations.pdf' target='_new' title='The capacity of Nuclear Power Station was 0.44 GW in 2015.' onmouseover='twentyfifty.startDemo(6); return true;' onmouseout='twentyfifty.stopDemo(6);return true;'>Nuclear Power Stations</a><a href='/assets/onepage/new/6/Nuclear Power Stations.pdf' target='_new' onmouseover='twentyfifty.startDemo(6); return true;' onmouseout='twentyfifty.stopDemo(6);return true;'><img height='13px' width='13px'  src='/assets/images/get_info.png'></a></td>
+                    
+                 
+                    <td class='choice'><a href='#' data-choicenumber='6' data-choicelevel='1' id='c6l1' title='A bleak scenario for nuclear. The capacity rises  to only 1.84 GW in 2050.' class='choiceLink' >1</a></td>
+                    
+                    <td class='choice'><a href='#' data-choicenumber='6' data-choicelevel='2' id='c6l2' title='Assumes that nuclear reactors are developed in state and capacity rises to 2.72 GW in 2050.' class='choiceLink' >2</a></td>
+                    
+                    <td class='choice'><a href='#' data-choicenumber='6' data-choicelevel='3' id='c6l3' title='An aggressive scenario that assumes that 1 GW capacity of FBR. Net nuclear capacity rises to 3.94 GW in 2050.' class='choiceLink' >3</a></td>
+                    
+                    <td class='choice'><a href='#' data-choicenumber='6' data-choicelevel='4' id='c6l4' title='A highly optimistic scenario which can accommodate 2.1GW by through FBR. The capacity goes to a high of 5.34 GW in 2050.' class='choiceLink' >4</a></td>
+                    
+                    <td class='choice' id='d6'></td></tr>
+                    <tr height='10'><td></td></tr>
+                </table>
+                <table style='margin-bottom:5px;'>
+    <tr class='incremental' id='10'>
+        <td class='name1' width='45%'><a href='javascript:void(0);' onclick='switchOpenCloseIcon(10); return false' data-toggle='collapse' data-target='#collapseme10' onmouseover='twentyfifty.startGroupDemo([7, 12]); return true;' onmouseout='twentyfifty.stopGroupDemo([7, 12]);return true;'>Hydroelectricity</a></td>
+        <td class='choice1' width='35%'>
+                 <input class="range_design" id="hydroe_range" type="range" min="1" max="4" value="2">
+             </td>
+        <td width='10%' id='dd-10' align='center'><span class="hydroe_val">2</span><a href='javascript:void(0);' onclick='switchOpenCloseIcon(10); return false' data-toggle='collapse' data-target='#collapseme10'><img id='m-10' width='15px' src='/assets/images/open.png'></td></tr></table>
+                <table class='collapse out' id='collapseme10'>
+                    <tr class='incremental' id='r7' style="display:none">
+                    <td class='name' cellpadding='10'><a href='/assets/onepage/new/22 - large hydro.pdf' target='_new' title1='The capacity of Large Hydro Power Plants was 41 GW in 2012.' onmouseover='twentyfifty.startDemo(7); return true;' onmouseout='twentyfifty.stopDemo(7);return true;'>Large Hydro Power Stations </a><a href='/assets/onepage/new/22 - large hydro.pdf' target='_new' onmouseover='twentyfifty.startDemo(7); return true;' onmouseout='twentyfifty.stopDemo(7);return true;'><img height='13px' width='13px'  src='/assets/images/get_info.png'></a></td>
+                    
+                    <td class='choice'><a href='#' data-choicenumber='7' data-choicelevel='1' id='c7l1' title1='Assumes poor environment for this technology, leading to a low capacity of 49 GW in 2047.' class='choiceLink' >1</a></td><td class='choice'><a href='#' data-choicenumber='7' data-choicelevel='2' id='c7l2' title1='A favourable outlook, with capacity growing to 75 GW in 2047.' class='choiceLink' >2</a></td><td class='choice'><a href='#' data-choicenumber='7' data-choicelevel='3' id='c7l3' title1='An aggressive growth scenario, resulting in a capacity of 105 GW in 2047.' class='choiceLink' >3</a></td><td class='choice'><a href='#' data-choicenumber='7' data-choicelevel='4' id='c7l4' title1='A heroic effort for this technology results in a capacity of 150 GW in 2047.' class='choiceLink' >4</a></td><td class='choice' id='d7'></td></tr>
+                    
+                    <tr class='incremental' id='r12'>
+                    
+                    <td class='name' cellpadding='10'><a href='/assets/onepage/new/6/Small Hydro Power Stations.pdf' target='_new' title='The capacity of Small Hydro was 10 MW in 2015.' onmouseover='twentyfifty.startDemo(12); return true;' onmouseout='twentyfifty.stopDemo(12);return true;'>Small Hydro Power Stations </a><a href='/assets/onepage/new/6/Small Hydro Power Stations.pdf' target='_new' onmouseover='twentyfifty.startDemo(12); return true;' onmouseout='twentyfifty.stopDemo(12);return true;'><img height='13px' width='13px'  src='/assets/images/get_info.png'></a></td>
+                    
+                    <td class='choice'><a href='#' data-choicenumber='12' data-choicelevel='1' id='c12l1' title='A pessimistic scenario with 31 MW capacity in 2050.' class='choiceLink' >1</a></td>
+                    
+                    <td class='choice'><a href='#' data-choicenumber='12' data-choicelevel='2' id='c12l2' title='A better growth, but still slow capacity addition. Total capacity reaches 92 MW in 2050.' class='choiceLink' >2</a></td>
+                    
+                    <td class='choice'><a href='#' data-choicenumber='12' data-choicelevel='3' id='c12l3' title='Assumes an optimistic scenario where total capacity reaches 150 MW by 2050.' class='choiceLink' >3</a></td>
+                    
+                    <td class='choice'><a href='#' data-choicenumber='12' data-choicelevel='4' id='c12l4' title='A highly aggressive outlook. Total capacity increases to 200 MW by 2050.' class='choiceLink' >4</a></td>
+                    
+                    <td class='choice' id='d12'></td></tr>
+                    <tr height='10'><td></td></tr>
+                </table>
+               <table style='margin-bottom:5px;'>
+    <tr class='incremental'  id='11'>
+        <td class='name1' width='45%'><a href='javascript:void(0);' onclick='switchOpenCloseIcon(11); return false' data-toggle='collapse' data-target='#collapseme11' onmouseover='twentyfifty.startGroupDemo([17, 18, 19, 20]); return true;' onmouseout='twentyfifty.stopGroupDemo([17, 18, 19, 20]);return true;'>Bioenergy</a></td>
+         <td class='choice1' width='35%'>
+                 <input class="range_design" id="bio_range" type="range" min="1" max="4" value="2">
+        </td>
+     
+        <td width='10%' id='dd-11' align='center'><span class="bio_val">2</span><a href='javascript:void(0);' onclick='switchOpenCloseIcon(11); return false' data-toggle='collapse' data-target='#collapseme11'><img id='m-11' width='15px' src='/assets/images/open.png'></td></tr></table>
+                <table class='collapse out' id='collapseme11'>
+                
+                    <tr class='incremental' id='r17'>
+                    
+                    
+                    <td class='name' cellpadding='10'><a title='24 Million tons of Non-fodder agricultural residue is available in 2015.' href='/assets/onepage/new/6/Biomass Residue Production.pdf' target='_new'  onmouseover='twentyfifty.startDemo(17); return true;' onmouseout='twentyfifty.stopDemo(17);return true;'>Biomass Residue Production </a><a href='/assets/onepage/new/6/Biomass Residue Production.pdf' target='_new' onmouseover='twentyfifty.startDemo(17); return true;' onmouseout='twentyfifty.stopDemo(17);return true;'><img height='13px' width='13px'  src='/assets/images/get_info.png'></a></td>
+                    
+                    
+                   <td class='choice'><a href='#' data-choicenumber='17' data-choicelevel='1' id='c17l1' title='A poor outlook for biomass residue production at annual growth rate of 1.5%.' class='choiceLink' >1</a></td>
+                   
+                   <td class='choice'><a href='#' data-choicenumber='17' data-choicelevel='2' id='c17l2' title='Annual growth rate of 2.5% in biomass residue production.' class='choiceLink' >2</a></td>
+                   
+                   <td class='choice'><a href='#' data-choicenumber='17' data-choicelevel='3' id='c17l3' title='Annual growth rate of 3.0% in biomass residue production.' class='choiceLink' >3</a></td>
+                   
+                   <td class='choice'><a href='#' data-choicenumber='17' data-choicelevel='4' id='c17l4' title='Biomass residue production increases at annual growth rate of 3.5%.' class='choiceLink' >4</a></td>
+                   
+                   <td class='choice' id='d17'></td></tr>
+                    
+                    
+                    <tr class='incremental' id='r18'>
+                    <td class='name' cellpadding='10'><a title="60% of biomass is used for cooking and almost zero for electricity generation in 2015." href='/assets/onepage/new/6/Biomass Residue End Use Application.pdf' target='_new'  onmouseover='twentyfifty.startDemo(18); return true;' onmouseout='twentyfifty.stopDemo(18);return true;'>Biomass Residue End Use Application </a><a href='/assets/onepage/new/6/Biomass Residue End Use Application.pdf' target='_new' onmouseover='twentyfifty.startDemo(18); return true;' onmouseout='twentyfifty.stopDemo(18);return true;'><img height='13px' width='13px'  src='/assets/images/get_info.png'></a></td>
+                    
+                    <td class='choice'><a href='#' data-choicenumber='18' data-choicelevel='1' id='c18l1' title='A poor outlook for value addition in biomass use. Only 0.52 GW capacity for electricity and 7% production of liquid fuel from residue(2050).' class='choiceLink' >1</a></td>
+                    
+                    <td class='choice'><a href='#' data-choicenumber='18' data-choicelevel='2' id='c18l2' title='A favorable regime raises use of biomass. 1.24 GW capacity for electricity and 15% production of liquid fuels from residue. (2050)' class='choiceLink' >2</a></td>
+                    
+                    <td class='choice'><a href='#' data-choicenumber='18' data-choicelevel='3' id='c18l3' title='An relatively high growth in biomass use value-addition, 2.44 GW in electricity and 22% production of liquid fuels from residue(2050).' class='choiceLink' >3</a></td>
+                    
+                    <td class='choice'><a href='#' data-choicenumber='18' data-choicelevel='4' id='c18l4' title='A aggressive scenario takes biomass value addition to very high levels, 1.98 GW in electricity and 38% for liquid fuels from residue (2050).' class='choiceLink' >4</a></td>
+                    
+                    <td class='choice' id='d18'></td></tr>
+                    
+                    
+                    <tr class='incremental' id='r19'>
+                    <td class='name' cellpadding='10'><a title='1st / 2nd gen biofuel production was only 14 ktoe/year in 2015' href='/assets/onepage/new/6/First and Second Generation Biofuel Production.pdf' target='_new'  onmouseover='twentyfifty.startDemo(19); return true;' onmouseout='twentyfifty.stopDemo(19);return true;'>First and Second Generation Biofuel Production </a><a href='/assets/onepage/new/6/First and Second Generation Biofuel Production.pdf' target='_new' onmouseover='twentyfifty.startDemo(19); return true;' onmouseout='twentyfifty.stopDemo(19);return true;'><img height='13px' width='13px'  src='/assets/images/get_info.png'></a></td>
+                    
+                    <td class='choice'><a href='#' data-choicenumber='19' data-choicelevel='1' id='c19l1' title='A poor scenario with production of 1st/2nd Gen biofuel reaching only 29 ktoe per yr (2050).' class='choiceLink' >1</a></td>
+                    
+                    <td class='choice'><a href='#' data-choicenumber='19' data-choicelevel='2' id='c19l2' title='An improved outlook, leading to 43 ktoe per year of biofuel production (2050).' class='choiceLink' >2</a></td>
+                    
+                    <td class='choice'><a href='#' data-choicenumber='19' data-choicelevel='3' id='c19l3' title='An aggressive growth in biofuel production reaching 62 ktoe per year(2050).' class='choiceLink' >3</a></td>
+                    
+                    <td class='choice'><a href='#' data-choicenumber='19' data-choicelevel='4' id='c19l4' title='A highly optimistic scenario increases production to 66 ktoe per year (2050).' class='choiceLink' >4</a></td><td class='choice' id='d19'></td></tr>
+                    
+                    
+                    <tr class='incremental' id='r20'>
+                    
+                    <td class='name' cellpadding='10'><a title='No bio-production from micro and macro algae in 2015.' href='/assets/onepage/new/6/Biofuel Production from Algae.pdf' target='_new'  onmouseover='twentyfifty.startDemo(20); return true;' onmouseout='twentyfifty.stopDemo(20);return true;'>Biofuel Production from Algae </a><a href='/assets/onepage/new/6/Biofuel Production from Algae.pdf' target='_new' onmouseover='twentyfifty.startDemo(20); return true;' onmouseout='twentyfifty.stopDemo(20);return true;'><img height='13px' width='13px'  src='/assets/images/get_info.png'></a></td>
+                    
+                    <td class='choice'><a href='#' data-choicenumber='20' data-choicelevel='1' id='c20l1' title='No Micro and Macro Algae  development.' class='choiceLink' >1</a></td>
+                    
+                    <td class='choice'><a href='#' data-choicenumber='20' data-choicelevel='2' id='c20l2' title='No Micro and Macro Algae  development.' class='choiceLink' >2</a></td>
+                    
+                    <td class='choice'><a href='#' data-choicenumber='20' data-choicelevel='3' id='c20l3' title='Microalgal based biofuel production of 17.3 ktoe/yr and liquid fuel production of 3.6 ktoe/yr (2050).' class='choiceLink' >3</a></td>
+                    
+                    <td class='choice'><a href='#' data-choicenumber='20' data-choicelevel='4' id='c20l4' title='Assumes a optimistic scenario with algae based biofuel production reaching 64 ktoe/yr and liquid fuel production reaching 28.1 ktoe/yr (2050).' class='choiceLink' >4</a></td>
+                    
+                    <td class='choice' id='d20'></td></tr>
+                    <tr height='10'><td></td></tr>
+                </table>
+                <table style='margin-bottom:5px;'>
+    <tr class='incremental' id='12'>
+        <td class='name1'  width='45%'><a href='javascript:void(0);' onclick='switchOpenCloseIcon(12); return false' data-toggle='collapse' data-target='#collapseme12' onmouseover='twentyfifty.startGroupDemo([21]); return true;' onmouseout='twentyfifty.stopGroupDemo([21]);return true;'>Waste to Energy</a></td>
+        <td class='choice1' width='35%'>
+                 <input class="range_design" id="was_range" type="range" min="1" max="4" value="2">
+        </td>
+        
+        <td width='10%' id='dd-12' align='center'><span class="was_val">2</span><a href='javascript:void(0);' onclick='switchOpenCloseIcon(12); return false' data-toggle='collapse' data-target='#collapseme12'><img id='m-12' width='15px' src='/assets/images/open.png'></td></tr></table>
+                <table class='collapse out' id='collapseme12'>
+                    <tr class='incremental' id='r21'>
+                    <td class='name' cellpadding='10'><a title='The capacity of WtE projects was zero in 2015.' href='/assets/onepage/new/6/Energy from Waste.pdf' target='_new' title1='The capacity of WtE projects was 96 MW in 2012.' onmouseover='twentyfifty.startDemo(21); return true;' onmouseout='twentyfifty.stopDemo(21);return true;'>Energy from Waste</a><a href='/assets/onepage/new/6/Energy from Waste.pdf' target='_new' onmouseover='twentyfifty.startDemo(21); return true;' onmouseout='twentyfifty.stopDemo(21);return true;'><img height='13px' width='13px'  src='/assets/images/get_info.png'></a></td>
+                    
+                    
+                    <td class='choice'><a href='#' data-choicenumber='21' data-choicelevel='1' id='c21l1' title='Assumes a slow growth reaching to 75 MW capacity by 2050' class='choiceLink' >1</a></td>
+                    
+                    <td class='choice'><a href='#' data-choicenumber='21' data-choicelevel='2' id='c21l2' title='Installed capacity reaches to 100 MW by 2050' class='choiceLink' >2</a></td>
+                    
+                    <td class='choice'><a href='#' data-choicenumber='21' data-choicelevel='3' id='c21l3' title='A faster growth with installed capacity reaching 125 MW in 2050.' class='choiceLink' >3</a></td>
+                    
+                    <td class='choice'><a href='#' data-choicenumber='21' data-choicelevel='4' id='c21l4' title='Assumes a highly optimistic scenario where installed capacity reaches to 150 MW by 2050.' class='choiceLink' >4</a></td>
+                    
+                        <td class='choice' id='d21'></td></tr>
+                </table>
+               <table style='margin-bottom:5px;'>
+    <tr class='incremental' id='13'>
+        <td class='name1' width='45%'><a href='javascript:void(0);' onclick='switchOpenCloseIcon(13); return false' data-toggle='collapse' data-target='#collapseme13' onmouseover='twentyfifty.startGroupDemo([22]); return true;' onmouseout='twentyfifty.stopGroupDemo([22]);return true;'>Hydrogen</a></td>
+        <td class='choice1' width='35%'>
+            <input class="range_design" id="hydg_range" type="range" min="1" max="4" value="2">
+        </td>
+        
+        
+       
+        <td width='10%' id='dd-13' align='center'><span class="hydg_val">2</span><a href='javascript:void(0);' onclick='switchOpenCloseIcon(13); return false' data-toggle='collapse' data-target='#collapseme13'><img id='m-13' width='15px' src='/assets/images/open.png'></td></tr></table>
+                <table class='collapse out' id='collapseme13'>
+                    <tr class='incremental' id='r22'>
+                    <td class='name' cellpadding='10'><a href='/assets/onepage/new/6/Hydrogen Production for Transport.pdf' target='_new' title='No Hydrogen Production in 2015' onmouseover='twentyfifty.startDemo(22); return true;' onmouseout='twentyfifty.stopDemo(22);return true;'>Hydrogen Production for Transport </a><a href='/assets/onepage/new/6/Hydrogen Production for Transport.pdf' target='_new' onmouseover='twentyfifty.startDemo(22); return true;' onmouseout='twentyfifty.stopDemo(22);return true;'><img height='13px' width='13px'  src='/assets/images/get_info.png'></a></td>
+                    
+                    <td class='choice'><a href='#' data-choicenumber='22' data-choicelevel='1' id='c22l1' title='95% of the required Hydrogen is produced from coal reforming and remaining 5 % from gas reforming in 2050.' class='choiceLink' >1</a></td>
+                    
+                    <td class='choice'><a href='#' data-choicenumber='22' data-choicelevel='2' id='c22l2' title='60% of the required hydrogen from Gas reforming, 30% by Coal gasification and 10 % by electrolysis in 2050.' class='choiceLink' >2</a></td>
+                    
+                    <td class='choice'><a href='#' data-choicenumber='22' data-choicelevel='3' id='c22l3' title='50% of the required Hydrogen is produced from electrolysis, 40 % from coal gasification, each 5% by gas reforming and biomass gasification in 2050.' class='choiceLink' >3</a></td>
+                    
+                    <td class='choice'><a href='#' data-choicenumber='22' data-choicelevel='4' id='c22l4' title='80% of the required Hydrogen is produced from Electrolysis,10% by Biogas, each 5 % by coal gasification and gas reforming in 2050.' class='choiceLink' >4</a></td>
+                    
+                    <td class='choice' id='d22'></td></tr>
+                </table>
+                </table>
+            </div>
+            
+           
+           
+           
+            <div id='electricity' class="box_show_range_div col-md-12">
+                <h2>Network and Systems</h2>
+                <table>
+                <!-- - structure.choices[0..37].each do |choice| -->
+                <!-- - [14,  43, 44, 45].each do |choice| -->
+                    <!--<table style='margin-bottom:5px;'>
+    <tr class='incremental' id='18'>
+        <td class='name1' width='45%'><a href='javascript:void(0);' onclick='switchOpenCloseIcon(18); return false' data-toggle='collapse' data-target='#collapseme18' onmouseover='twentyfifty.startGroupDemo([15]); return true;' onmouseout='twentyfifty.stopGroupDemo([15]);return true;'>Cross Border Electricity Trade</a></td>
+        <td class='choice1'>
+            <input class="range_design" id="cross_ele_range" type="range" min="0" max="4" value="4">
+        </td>
+        <td width='10%' id='dd-18' align='center'><span class="cross_ele_val">4</span><a href='javascript:void(0);' onclick='switchOpenCloseIcon(18); return false' data-toggle='collapse' data-target='#collapseme18'><img id='m-18' width='15px' src='/assets/images/open.png'></td></tr></table>-->
+                <table class='collapse out' id='collapseme18'>
+                    <tr class='incremental' id='r15'><td class='name' cellpadding='10'><a href='/assets/onepage/Cross border electricity trade import.pdf' target='_new' title1='The import and export of electricity in 2012 was 1.5 GW and 0.2 GW.' onmouseover='twentyfifty.startDemo(15); return true;' onmouseout='twentyfifty.stopDemo(15);return true;'>Cross Border Electricity Trade </a></td><td width='20px'><a href='/assets/onepage/Cross border electricity trade import.pdf' target='_new' onmouseover='twentyfifty.startDemo(15); return true;' onmouseout='twentyfifty.stopDemo(15);return true;'><img height='13px' width='13px'  src='/assets/images/get_info.png'></a></td><td class='choice'><a href='#' data-choicenumber='15' data-choicelevel='1' id='c15l1' title1='Assumes that Imports and exports continue to be low. Electricity import rises to 10 GW in 2047. Electricity export rises to 2 GW in 2047.' class='choiceLink' >1</a></td><td class='choice'><a href='#' data-choicenumber='15' data-choicelevel='2' id='c15l2' title1='Assumes a growth scenario for imports and exports. The import rises to 30 GW and export rises to 4 GW in 2047.' class='choiceLink' >2</a></td><td class='choice'><a href='#' data-choicenumber='15' data-choicelevel='3' id='c15l3' title1='Assumes aggressive growth in imports from Nepal and Bhutan as they reach 55 GW in 2047. Export rises with completion of phase 1 & 2 of HVDC bipolar line b/w India and Sri Lanka to 6 GW in 2047.' class='choiceLink' >3</a></td><td class='choice'><a href='#' data-choicenumber='15' data-choicelevel='4' id='c15l4' title1='Assumes highly optimistic growth in imports and exports. Imports rise to 60 GW whereas export rises to 10 GW by 2047.' class='choiceLink' >4</a></td><td class='choice' id='d15'></td></tr>
+                    <tr height='10'><td></td></tr>
+                </table>
+                
+                <table style='margin-bottom:5px;'>
+    <tr class='incremental' id='19'>
+        <td class='name1' width='45%'><a href='javascript:void(0);' onclick='switchOpenCloseIcon(19); return false' data-toggle='collapse' data-target='#collapseme19' onmouseover='twentyfifty.startGroupDemo([50]); return true;' onmouseout='twentyfifty.stopGroupDemo([50]);return true;'>T&D Losses</a></td>
+        <td class='choice1' width='35%'>
+             <input class="range_design" id="t_d_range" type="range" min="1" max="4" value="2">
+                
+        </td>
+        <td width='10%' id='dd-19' align='center'><span class="t_d_val">2</span><a href='javascript:void(0);' onclick='switchOpenCloseIcon(19); return false' data-toggle='collapse' data-target='#collapseme19'><img id='m-19' width='15px' src='/assets/images/open.png'></td></tr></table>
+                <table class='collapse out' id='collapseme19'>
+                    <tr class='incremental' id='r50'>
+                    
+                    <td class='name' cellpadding='10'><a href='/assets/onepage/new/6/Transmission and Distribution Losses.pdf' target='_new' title='The present levels of T&D losses were 20% in 2015.' onmouseover='twentyfifty.startDemo(50); return true;' onmouseout='twentyfifty.stopDemo(50);return true;'>Transmission and Distribution Losses </a><a href='/assets/onepage/new/6/Transmission and Distribution Losses.pdf' target='_new' onmouseover='twentyfifty.startDemo(50); return true;' onmouseout='twentyfifty.stopDemo(50);return true;'><img height='13px' width='13px'  src='/assets/images/get_info.png'></a></td>
+                    
+                    
+                    <td class='choice'><a href='#' data-choicenumber='50' data-choicelevel='1' id='c50l1' title='Improvement in T&D losses is slow. It reduces to 8 % in 2050.' class='choiceLink' >1</a></td>
+                    
+                    <td class='choice'><a href='#' data-choicenumber='50' data-choicelevel='2' id='c50l2' title='A moderate reduction in T&D losses are considered as they reach 7% by 2050.' class='choiceLink' >2</a></td>
+                    
+                    <td class='choice'><a href='#' data-choicenumber='50' data-choicelevel='3' id='c50l3' title='T&D losses reduces to 6% in 2050.' class='choiceLink' >3</a></td>
+                    
+                    <td class='choice'><a href='#' data-choicenumber='50' data-choicelevel='4' id='c50l4' title='The T&D loses are reduced to 5% by 2050' >4</a></td>
+                    
+                    <td class='choice' id='d50'></td></tr>
+                    <tr height='10'><td></td></tr>
+                </table>
+                <table style='margin-bottom:5px;'>
+    <tr class='incremental' id='20'>
+        <td class='name1' width='45%'><a href='javascript:void(0);' onclick='switchOpenCloseIcon(20); return false' data-toggle='collapse' data-target='#collapseme20' onmouseover='twentyfifty.startGroupDemo([51]); return true;' onmouseout='twentyfifty.stopGroupDemo([51]);return true;'>Storage</a></td>
+        <td class='choice1' width='35%'>
+             <input class="range_design" id="storage_range" type="range" min="1" max="4" value="2">
+        </td>
+        <td width='10%' id='dd-20' align='center'><span class="storage_val">2</span><a href='javascript:void(0);' onclick='switchOpenCloseIcon(20); return false' data-toggle='collapse' data-target='#collapseme20'><img id='m-20' width='15px' src='/assets/images/open.png'></td></tr></table>
+                <table class='collapse out' id='collapseme20'>
+                    <tr class='incremental' id='r51'>
+                    <td class='name' cellpadding='10'><a href='/assets/onepage/new/6/Energy and Power Storage.pdf' target='_new' title='The cumulative Storage capacity was zero in 2015..' onmouseover='twentyfifty.startDemo(51); return true;' onmouseout='twentyfifty.stopDemo(51);return true;'>Energy and Power Storage</a><a href='/assets/onepage/new/6/Energy and Power Storage.pdf' target='_new' onmouseover='twentyfifty.startDemo(51); return true;' onmouseout='twentyfifty.stopDemo(51);return true;'><img height='13px' width='13px'  src='/assets/images/get_info.png'></a></td>
+                    
+                    <td class='choice'><a href='#' data-choicenumber='51' data-choicelevel='1' id='c51l1' title='Assumes Grid connected storage does not grow much in this scenario and rises to mere 3.6 GW by 2050..' class='choiceLink' >1</a></td>
+                    
+                    <td class='choice'><a href='#' data-choicenumber='51' data-choicelevel='2' id='c51l2' title='In this scenario, improved RE growth and EVs stimulates total grid connected storage to 6.6 GW by 2050.' class='choiceLink' >2</a></td>
+                    
+                    <td class='choice'><a href='#' data-choicenumber='51' data-choicelevel='3' id='c51l3' title='A high RE scenario works in the favour of storage capacity increase. Capacity rises to 9.2 GW by 2050.' class='choiceLink' >3</a></td>
+                    
+                    <td class='choice'><a href='#' data-choicenumber='51' data-choicelevel='4' id='c51l4' title='Implementation of micro grids promote storage seamlessly. It rises to 14 GW by 2050.' class='choiceLink' >4</a></td>
+                    
+                    <td class='choice' id='d51'></td></tr>
+                    <tr height='10'><td></td></tr>
+                </table>
+                <table style='margin-bottom:5px;'>
+    <tr style="display:none" class='incremental' id='21'>
+        <td class='name1' width='45%'><a href='javascript:void(0);' onclick='switchOpenCloseIcon(21); return false' data-toggle='collapse' data-target='#collapseme21' onmouseover='twentyfifty.startGroupDemo([52]); return true;' onmouseout='twentyfifty.stopGroupDemo([52]);return true;'>Reliability of Grid</a></td>
+        <td class='choice1' width='35%'>
+            <input class="range_design" id="reliability_range" type="range" min="1" max="4" value="2">  
+        </td>
+        <td width='10%' id='dd-21' align='center'><span class="reliability_val">2</span><a href='javascript:void(0);' onclick='switchOpenCloseIcon(21); return false' data-toggle='collapse' data-target='#collapseme21'><img id='m-21' width='15px' src='/assets/images/open.png'></td></tr></table>
+                <table class='collapse out' id='collapseme21'>
+                    <tr class='incremental' id='r52'>
+                    <td class='name' cellpadding='10'><a href='/assets/onepage/Reliability of the Grid.pdf' target='_new' title1='Assumes that 80% of the electricity in the residential sector and 92% electricity in the Commercial sector is available when demanded. The rest is met by diesel generators. ' onmouseover='twentyfifty.startDemo(52); return true;' onmouseout='twentyfifty.stopDemo(52);return true;'>Reliabilty of Grid </a><a href='/assets/onepage/Reliability of the Grid.pdf' target='_new' onmouseover='twentyfifty.startDemo(52); return true;' onmouseout='twentyfifty.stopDemo(52);return true;'><img height='13px' width='13px'  src='/assets/images/get_info.png'></a></td>
+                    
+                    
+                    <td class='choice'><a href='#' data-choicenumber='52' data-choicelevel='1' id='c52l1' title1='Assumes that the 24x7 target to provide electricity to all is unmet in both the Residential as well as the Commercial sectors.' class='choiceLink' >1</a></td><td class='choice'><a href='#' data-choicenumber='52' data-choicelevel='2' id='c52l2' title1='Assumes that the 24x7 target to provide electricity to all is met by 2042 in the Residential sector as well as the Commercial sector.' class='choiceLink' >2</a></td><td class='choice'><a href='#' data-choicenumber='52' data-choicelevel='3' id='c52l3' title1='Assumes that the 24x7 target to provide electricity to all is met by 2032 in the Residential sector as well as the Commercial sector.' class='choiceLink' >3</a></td><td class='choice'><a href='#' data-choicenumber='52' data-choicelevel='4' id='c52l4' title1='Assumes that the 24x7 target to provide electricity to all is met by 2022 in the Residential sector as well as the Commercial sector.' class='choiceLink' >4</a></td><td class='choice' id='d52'></td></tr>
+                    <tr height='10'><td></td></tr>
+                </table>
+                </table>
+            </div>
+                </div> 
+						 
+						           <div class="col-md-12 col-xs-12 both_remove">
+                            
+                
+            <div id='guide' class="box_show_range_div">
+                <h2>Key</h2>
+                
+                <div class="key_jhn">
+                                <div class="col-md-2">
+                                  <a class="level1" href="javascript:void(0);">1</a>
+                                  <span>Least Effort</span>
+                                </div>
+                                
+                                 <div class="col-md-2">
+                                   <a class="level2" href="javascript:void(0);">2</a>
+                                  <span> Dertermined Effort</span>
+                                </div>
+                                
+                                 <div class="col-md-2">
+                                    <a class="level3" href="javascript:void(0);">3</a>
+                                  <span>Aggressive Effort</span>
+                                </div>
+                                
+                                 <div class="col-md-2">
+                                  <a class="level4" href="javascript:void(0);">4</a>
+                                  <span>Heroic Effort</span>
+                                </div>
+                                
+                                <div class="col-md-4 col-xs-12">
+                                    <span>One pager description for each sector</span>
+                                    <p>A range of options where one alternative is not neccesiarily more aggressive than the other</p>
+                                </div>
+                                <div class="clear_class">
+                                </div>
+                            </div>
+                
+                <!--<table>
+                <tr class='incremental'>
+                    <td class='choice'>
+                    <a class="level1" href="#">1</a>
+                    </td>
+                    <td>
+                    Least Effort
+                    </td>
+                </tr>
+                <tr class='incremental'>
+                    <td class='choice'>
+                    <a class="level2" href="#">2</a>
+                    </td>
+                    <td>
+                    Dertermined Effort
+                    </td>
+                </tr>
+                <tr class='incremental'>
+                    <td class='choice'>
+                    <a class="level3" href="#">3</a>
+                    </td>
+                    <td>
+                    Aggressive Effort
+                    </td>
+                </tr>
+                <tr class='incremental'>
+                    <td class='choice'>
+                    <a class="level4" href="#">4</a>
+                    </td>
+                    <td>
+                    Heroic Effort
+                    </td>
+                </tr>
+                <tr class='incremental'>
+                    <td>
+                    <img width="13px" height="13px" src="/assets/images/get_info.png">
+                    </td>
+                    <td>
+                    One pager description for each sector
+                    </td>
+                </tr>
+                <tr class='incremental'>
+                    <td>
+                    A-E
+                    </td>
+                    <td>
+                    A range of options where one alternative is not neccesiarily more aggressive than the other
+                    </td>
+                </tr>
+               
+                </table>-->
+            </div>
+              </div>
+                </div>
+                </div>
+            
+            </div>
+            <div id='tooltip'></div>
+            <div class='clearfix'></div>
+            <div id='viewStory'></div>
+         </div> 
+         
+           </div> 
+         
+    <!------graph and chat section start---------------->
+    
+    <div id='footerr'>
+        <div class='rowss' id='topbar5'>
+        <div class='container'>
+        <span class="footer_links">Based On <a href="/assets/Gujarat_sheet.xlsx" target="_blank">Excel</a></span>. Draft Version
+       <!-- Start of SimpleHitCounter Code -->
+            <div align="center">Visitor &emsp; <img src="http://simplehitcounter.com/hit.php?uid=2301446&f=16777215&b=0" border="0" height="18" width="83" alt="web counter"></div>
+<!-- End of SimpleHitCounter Code -->
+    </div>
+  </div> </div>
+ 
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+     <script src='/assets/application_indian_version.js' type='text/javascript'></script>
+  
+   <script>
+            function ddd()
+		{
+                     $('#home_page_set').removeClass('current');
+                     $('#costt_total').addClass('current');
+		}
+		
+		function ddd1()
+		{
+			twentyfifty.switchView('total_cost');
+		}
+		function myFunction()
+		{
+                        ddd1();
+			ddd();
+			
+		}
+	  </script>
+	
+  </body>
+</html>
