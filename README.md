@@ -1,9 +1,7 @@
-# IESS 2047 CALCULATOR TOOL
+# GSEC2050 CALCULATOR TOOL
 
-A web interface to the Indiaenergy Security Scenarios  calculator
+A web interface to the Gujarat State Energy Calculator
 
-Further detail on the project:
-http://indiaenergy.gov.in
 
 Canonical source:
 http://github.com/iept/iess_v2
@@ -33,4 +31,4 @@ To run in 'production' mode:
 # HACKING
 
 You are welcome to improve this code. Please read the LICENCE file and then the HACKING file contains some hints and tips on changing the code and a process for sending in patches and bug reports.
-# iess_v2
+
