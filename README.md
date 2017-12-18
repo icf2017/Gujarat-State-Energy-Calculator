@@ -1,4 +1,4 @@
-# GSEC2050 CALCULATOR TOOL
+# GSEC 2050 CALCULATOR TOOL
 
 A web interface to the Gujarat State Energy Calculator
 
@@ -32,3 +32,4 @@ To run in 'production' mode:
 
 You are welcome to improve this code. Please read the LICENCE file and then the HACKING file contains some hints and tips on changing the code and a process for sending in patches and bug reports.
 
+Developed by http://icf.com/
